@@ -1,0 +1,311 @@
+[
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d19"},
+      "Supplier Name": "Highway Express",
+      "Receipt Number": 2021501,
+      "Date": "2025-01-15",
+      "Time": "09:00",
+      "Category": "toll",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Highway 45, San Francisco, CA",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 15.50,
+      "Total Net": 15.50,
+      "Total Tax": 0.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d1a"}, "Description": "Toll for Highway 45", "Quantity": 1, "Unit Price": 15.50, "Total Price": 15.50}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d1b"},
+      "Supplier Name": "Bistro Cafe",
+      "Receipt Number": 2045689,
+      "Date": "2025-02-04",
+      "Time": "12:30",
+      "Category": "food",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Market St, San Francisco, CA",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 75.90,
+      "Total Net": 70.00,
+      "Total Tax": 5.90,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d1c"}, "Description": "Chicken Sandwich", "Quantity": 1, "Unit Price": 12.00, "Total Price": 12.00},
+        {"_id": {"$oid": "605c72ef1532077fc7f94d1d"}, "Description": "Salad", "Quantity": 1, "Unit Price": 8.00, "Total Price": 8.00},
+        {"_id": {"$oid": "605c72ef1532077fc7f94d1e"}, "Description": "Coffee", "Quantity": 2, "Unit Price": 5.00, "Total Price": 10.00},
+        {"_id": {"$oid": "605c72ef1532077fc7f94d1f"}, "Description": "Dessert", "Quantity": 1, "Unit Price": 10.00, "Total Price": 10.00}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d20"},
+      "Supplier Name": "Park & Go Parking",
+      "Receipt Number": 3078921,
+      "Date": "2025-03-10",
+      "Time": "18:00",
+      "Category": "parking",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "123 Park Ave, New York, NY",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 20.00,
+      "Total Net": 20.00,
+      "Total Tax": 0.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d21"}, "Description": "Parking Fee", "Quantity": 1, "Unit Price": 20.00, "Total Price": 20.00}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d22"},
+      "Supplier Name": "City Ride Transport",
+      "Receipt Number": 4097834,
+      "Date": "2025-04-02",
+      "Time": "07:30",
+      "Category": "transport",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "101 City St, Los Angeles, CA",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 30.00,
+      "Total Net": 30.00,
+      "Total Tax": 0.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d23"}, "Description": "Taxi Ride", "Quantity": 1, "Unit Price": 30.00, "Total Price": 30.00}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d24"},
+      "Supplier Name": "Sunset Inn",
+      "Receipt Number": 5094765,
+      "Date": "2025-01-12",
+      "Time": "22:00",
+      "Category": "accommodation",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "200 Sunset Blvd, Los Angeles, CA",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 150.00,
+      "Total Net": 150.00,
+      "Total Tax": 0.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d25"}, "Description": "Hotel Room", "Quantity": 1, "Unit Price": 150.00, "Total Price": 150.00}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d26"},
+      "Supplier Name": "Fuel Stop",
+      "Receipt Number": 6093847,
+      "Date": "2025-03-18",
+      "Time": "15:00",
+      "Category": "gasoline",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "456 Fuel Rd, San Diego, CA",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 45.00,
+      "Total Net": 45.00,
+      "Total Tax": 0.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d27"}, "Description": "Gasoline", "Quantity": 1, "Unit Price": 45.00, "Total Price": 45.00}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d28"},
+      "Supplier Name": "MobileTel Communications",
+      "Receipt Number": 7029456,
+      "Date": "2025-04-01",
+      "Time": "10:30",
+      "Category": "telecom",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "789 Telecom St, New York, NY",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 85.50,
+      "Total Net": 80.00,
+      "Total Tax": 5.50,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d29"}, "Description": "Mobile Phone Bill", "Quantity": 1, "Unit Price": 85.50, "Total Price": 85.50}
+      ]
+    },
+    {
+      "_id": {"$oid": "605c72ef1532077fc7f94d2a"},
+      "Supplier Name": "Miscellaneous Shop",
+      "Receipt Number": 8043456,
+      "Date": "2025-02-20",
+      "Time": "13:45",
+      "Category": "miscellaneous",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "12 Misc Rd, Chicago, IL",
+      "Supplier Phone Number": {"$numberDouble": "NaN"},
+      "Locale": "en-US",
+      "Total Amount": 120.00,
+      "Total Net": 100.00,
+      "Total Tax": 20.00,
+      "Tip and Gratuity": {"$numberDouble": "NaN"},
+      "items": [
+        {"_id": {"$oid": "605c72ef1532077fc7f94d2b"}, "Description": "Various Supplies", "Quantity": 1, "Unit Price": 120.00, "Total Price": 120.00}
+      ]
+    },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d2c"},
+          "Supplier Name": "Golden Gate Parking",
+          "Receipt Number": 9102837,
+          "Date": "2025-03-05",
+          "Time": "14:00",
+          "Category": "parking",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "Golden Gate St, San Francisco, CA",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 25.00,
+          "Total Net": 25.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d2d"}, "Description": "Parking at Golden Gate", "Quantity": 1, "Unit Price": 25.00, "Total Price": 25.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d2e"},
+          "Supplier Name": "Uber Transportation",
+          "Receipt Number": 1203845,
+          "Date": "2025-04-01",
+          "Time": "08:00",
+          "Category": "transport",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "Uber HQ, San Francisco, CA",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 35.00,
+          "Total Net": 35.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d2f"}, "Description": "Uber Ride", "Quantity": 1, "Unit Price": 35.00, "Total Price": 35.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d30"},
+          "Supplier Name": "Holiday Inn",
+          "Receipt Number": 2103950,
+          "Date": "2025-03-22",
+          "Time": "16:00",
+          "Category": "accommodation",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "123 Main St, Los Angeles, CA",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 220.00,
+          "Total Net": 220.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d31"}, "Description": "Hotel Room (2 nights)", "Quantity": 1, "Unit Price": 220.00, "Total Price": 220.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d32"},
+          "Supplier Name": "Chevron Gas Station",
+          "Receipt Number": 3305942,
+          "Date": "2025-04-06",
+          "Time": "09:30",
+          "Category": "gasoline",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "456 Gas Blvd, Las Vegas, NV",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 55.00,
+          "Total Net": 55.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d33"}, "Description": "Gasoline Fill-up", "Quantity": 1, "Unit Price": 55.00, "Total Price": 55.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d34"},
+          "Supplier Name": "Comcast Communications",
+          "Receipt Number": 4406853,
+          "Date": "2025-04-10",
+          "Time": "17:45",
+          "Category": "telecom",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "789 Comcast St, San Diego, CA",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 120.00,
+          "Total Net": 100.00,
+          "Total Tax": 20.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d35"}, "Description": "Internet Service", "Quantity": 1, "Unit Price": 120.00, "Total Price": 120.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d36"},
+          "Supplier Name": "Rising Sun Imports",
+          "Receipt Number": 5507764,
+          "Date": "2025-02-10",
+          "Time": "11:00",
+          "Category": "miscellaneous",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "99 Misc Rd, Chicago, IL",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 180.00,
+          "Total Net": 150.00,
+          "Total Tax": 30.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d37"}, "Description": "Office Supplies", "Quantity": 1, "Unit Price": 180.00, "Total Price": 180.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d38"},
+          "Supplier Name": "Speedy Park",
+          "Receipt Number": 6608675,
+          "Date": "2025-03-28",
+          "Time": "13:00",
+          "Category": "parking",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "123 Park Ave, Los Angeles, CA",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 20.00,
+          "Total Net": 20.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d39"}, "Description": "Parking Fee", "Quantity": 1, "Unit Price": 20.00, "Total Price": 20.00}
+          ]
+        },
+        {
+          "_id": {"$oid": "605c72ef1532077fc7f94d3a"},
+          "Supplier Name": "Luxury Ride",
+          "Receipt Number": 7709586,
+          "Date": "2025-03-15",
+          "Time": "20:15",
+          "Category": "transport",
+          "Document Type": "EXPENSE RECEIPT",
+          "Supplier Address": "100 Ride St, New York, NY",
+          "Supplier Phone Number": {"$numberDouble": "NaN"},
+          "Locale": "en-US",
+          "Total Amount": 80.00,
+          "Total Net": 80.00,
+          "Total Tax": 0.00,
+          "Tip and Gratuity": {"$numberDouble": "NaN"},
+          "items": [
+            {"_id": {"$oid": "605c72ef1532077fc7f94d3b"}, "Description": "Luxury Car Service", "Quantity": 1, "Unit Price": 80.00, "Total Price": 80.00}
+          ]
+        }
+      ]
+      
+  

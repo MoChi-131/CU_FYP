@@ -1,0 +1,3 @@
+& "C:\Program Files\MongoDB\Server\8.0\bin\mongod.exe" --port 27018 --dbpath="C:\data\db"
+
+mongosh --port 27018
