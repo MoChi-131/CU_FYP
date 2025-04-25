@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import sys
 import os
 
-sys.path.append(os.path.abspath('..'))
-from MongoDB.T2_chart_data import retrieve_expense_data
+from MongoDB import retrieve_expense_data
 
 
 def draw_T2_chart(date=None, budget=[]):
@@ -34,7 +33,8 @@ def draw_T2_chart(date=None, budget=[]):
     plt.grid(True, which='major', axis='y', linestyle='--', color='gray', alpha=0.7)
 
     # Check if the directory exists, and if not, create it
-    output_path = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\static\Trend_2.png"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'Trend_2.png')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     plt.savefig(output_path, bbox_inches='tight')

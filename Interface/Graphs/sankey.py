@@ -1,7 +1,5 @@
 import plotly.graph_objects as go
-import sys
 import os
-sys.path.append(os.path.abspath('..'))
 
 def sankey(data):
   
@@ -41,7 +39,9 @@ def sankey(data):
     font=dict(size=15.5, color='black')
   )
 
-  output_path = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\static\Sankey.html"
+  current_dir = os.path.dirname(os.path.abspath(__file__))
+  output_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'Sankey.html')
+
   fig.write_html(output_path)
   print("saved")
 

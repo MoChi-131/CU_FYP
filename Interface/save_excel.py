@@ -1,6 +1,7 @@
 import pandas as pd
 import pymongo
 import pandas as pd
+import os
 
 # MongoDB Connection
 client = pymongo.MongoClient("mongodb://localhost:27018/")  # Change to your MongoDB URI
@@ -9,9 +10,10 @@ collection = db["Raw_Data"]  # Collection Name
 
 def upload_excel():
     # File names
-    excel_file = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\extracted_data.xlsx"  # Updated Excel file
-    csv_file = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\output_csv\Finalised.csv"  # Output CSV file
-
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    excel_file = os.getenv("EXCEL_FILE") or os.path.join(current_dir, 'extracted_data.xlsx')
+    csv_file = os.getenv("CSV_FILE") or os.path.join(current_dir, 'OCR', 'output_csv', 'Finalised.csv')
+    
     # Read the updated Excel file
     df = pd.read_excel(excel_file, engine='openpyxl')
 

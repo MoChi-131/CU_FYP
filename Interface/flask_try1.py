@@ -7,21 +7,14 @@ from dateutil.relativedelta import relativedelta
 import imghdr
 import os
 import sys
-import magic # type: ignore
+import magic
 import subprocess
 
-
-from MongoDB.Total_Money_In import In_monthly
-from MongoDB.Total_Money_Out import Out_monthly
-from MongoDB.T2_chart_data import retrieve_expense_data
-from Graphs.categories_pie_chart import draw_pie_chart
-from Graphs.categories_bar_chart import draw_T2_chart
-from Graphs.categories import create_expense_plot
-from Graphs.sankey import sankey
-from OCR.Backend.OCR_space_API_PDF import pdf_extract
-from OCR.Backend.extracting import data_extract
-from OCR.Backend.data_organising import data_cleaning
+from MongoDB import In_monthly, Out_monthly, retrieve_expense_data
+from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
+from OCR import pdf_extract, data_extract, data_cleaning
 from save_excel import upload_excel
+
 
 client = MongoClient("mongodb://localhost:27018/")
 try:

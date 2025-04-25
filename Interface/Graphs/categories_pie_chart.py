@@ -1,12 +1,9 @@
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')  # For use in non-interactive backends
-
-import sys
 import os
 
-sys.path.append(os.path.abspath('..'))
-from MongoDB.pie_chart_data import fetch_category_data
+from MongoDB import fetch_category_data
 
 def draw_pie_chart(date):
     data, categories = fetch_category_data(date)
@@ -56,7 +53,8 @@ def draw_pie_chart(date):
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
     # Check if the directory exists, and if not, create it
-    output_path = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\static\pie_chart.png"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'pie_chart.png')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     plt.savefig(output_path, bbox_inches='tight')

@@ -1,11 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import sys
 import os
-
-sys.path.append(os.path.abspath('..'))
-from MongoDB.T1_chart_data import retrieve_expense_monthly_data
-from MongoDB.T1_chart_data_weekly import retrieve_expense_data_weekly
+from MongoDB import retrieve_expense_monthly_data, retrieve_expense_data_weekly
 
 
 def create_expense_plot(current_date=None, mode=None):
@@ -99,7 +95,8 @@ def create_expense_plot(current_date=None, mode=None):
 
     # Save the figure
     plt.tight_layout()
-    save_path = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\static\Trend_1.png"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'Trend_1.png')
     plt.savefig(save_path)
     plt.close()
 

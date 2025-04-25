@@ -3,12 +3,15 @@ from .extracting import data_extract
 import pandas as pd
 from datetime import datetime
 from openpyxl import load_workbook
+import os
+
 
 def data_cleaning():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     # File names
-    input_total =  r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\output_csv\Total.csv"
-    input_detail = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\output_csv\Details.csv"
-    excel_file = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\extracted_data.xlsx"
+    input_total = os.getenv("INPUT_TOTAL") or os.path.join(current_dir, '..', 'output_csv', 'Total.csv')
+    input_detail = os.getenv("INPUT_DETAIL") or os.path.join(current_dir, '..', 'output_csv', 'Details.csv')
+    excel_file = os.getenv("EXCEL_FILE") or os.path.join(current_dir, '..', 'extracted_data.xlsx')
 
     #data from extracting module
     total_data_dict, detail_data_dict = data_extract()

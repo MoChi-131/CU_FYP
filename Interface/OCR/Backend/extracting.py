@@ -1,9 +1,12 @@
 import csv
 import re
+import os
 
 def data_extract():
+    
+    current_dir = os.path.dirname(os.path.abspath(__file__))
 
-    input = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\output_csv\output.csv"
+    input= os.path.join(current_dir, '..', 'output_csv', 'output.csv')
 
     output = {}
 

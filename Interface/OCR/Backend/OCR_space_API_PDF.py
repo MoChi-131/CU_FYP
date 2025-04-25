@@ -1,28 +1,32 @@
 import requests
 import csv
 from pdf2image import convert_from_path
+import os
 
 def pdf_extract(pdf_path):
     # Convert PDF to images
     
-    poppler_path = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\Backend\poppler-24.08.0\Library\bin"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Build the relative path to the poppler bin directory
+    poppler_path = os.path.join(current_dir, 'poppler-24.08.0', 'Library', 'bin')    
     pages = convert_from_path(pdf_path, poppler_path = poppler_path)
 
     # OCR.space API key
     api_key = "K86302086688957"
 
     # Output
-    output= r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\OCR\output_csv\output.csv"
+    output = os.path.join(current_dir, '..', 'output_csv', 'output.csv')
 
     # Open CSV file for writing
     with open(output, mode="w", newline="", encoding="utf-8") as csv_file:
         csv_writer = csv.writer(csv_file)
-        #csv_writer.writerow(["Page Number", "Extracted Text"])  # CSV Header
-
+        input_folder = os.getenv("INPUT_FOLDER") or os.path.join(current_dir, '..', 'input')
+        
         # Process each page separately
         for i, page in enumerate(pages):
             # Save each page as an image file
-            image_path = f"C:\\Users\\awang\\OneDrive\\桌面\\CU\\Year 3\\FYP\\Interface\\OCR\\input\\input{i+1}.png"
+            image_path = os.path.join(input_folder, f"input{i+1}.png")
             page.save(image_path, "PNG")
 
             # Send request to OCR.space API
