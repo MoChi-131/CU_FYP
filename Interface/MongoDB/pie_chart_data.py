@@ -1,14 +1,12 @@
 from pymongo import MongoClient
 
-categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous"]
-
-def fetch_category_data(date):
+def fetch_category_data(date, categories):
     data = []
 
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
     db = client["Personal_Accounting"]
-    collection = db["Reciept_Full_Detail"]
+    collection = db["Full_Detail"]
 
     for category in categories:
         pipeline = [
@@ -24,7 +22,7 @@ def fetch_category_data(date):
                 "$group": {
                     "_id": "$Category",
                     "total_amount": {
-                        "$sum": "$Total Amount"
+                        "$sum": "$Money Out"
                     }
                 }
             }
@@ -33,5 +31,4 @@ def fetch_category_data(date):
         result = list(collection.aggregate(pipeline))
         amount = result[0]["total_amount"] if result else 0
         data.append(amount)
-
     return data, categories

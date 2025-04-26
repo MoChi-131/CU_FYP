@@ -2,14 +2,7 @@ from pymongo import MongoClient
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-def retrieve_expense_data(current_date=None):
-    # Use provided date or default to test date
-    if current_date is None:
-        current_date = datetime(2025, 4, 20)  # Replace with datetime.now() for real-time use
-    
-    # Define categories
-    categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous"]
-    
+def retrieve_expense_data(current_date, categories):        
     # Calculate date range for last month
     last_month_end = current_date.replace(day=1) - relativedelta(days=1)  # Last day of last month
     last_month_start = last_month_end.replace(day=1)  # First day of last month
@@ -21,7 +14,7 @@ def retrieve_expense_data(current_date=None):
         # Connect to MongoDB
         client = MongoClient("mongodb://localhost:27018/")
         db = client["Personal_Accounting"]
-        collection = db["Reciept_Full_Detail"]
+        collection = db["Full_Detail"]
         
         # Aggregation pipeline for last month
         pipeline = [
@@ -36,7 +29,7 @@ def retrieve_expense_data(current_date=None):
             {
                 "$group": {
                     "_id": "$Category",
-                    "total_amount": {"$sum": "$Total Amount"}
+                    "total_amount": {"$sum": "$Money Out"}
                 }
             }
         ]
@@ -47,8 +40,7 @@ def retrieve_expense_data(current_date=None):
         # Process results
         for result in results:
             category = result['_id']
-            if category in categories:  # Only include specified categories
-                category_totals[category] = round(result['total_amount'], 2)
+            category_totals[category] = round(result['total_amount'], 2)
         
         # Close MongoDB connection
         client.close()
@@ -64,4 +56,5 @@ def retrieve_expense_data(current_date=None):
     return data
     
 if __name__== "__main__":
-    print(retrieve_expense_data())
+    categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other"]
+    print(retrieve_expense_data(datetime.now(), categories))

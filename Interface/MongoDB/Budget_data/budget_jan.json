@@ -9,6 +9,7 @@
       "Gasoline": 110,
       "Telecom": 55,
       "Miscellaneous": 70,
+      "Other" : 100,
       "Saving": 250
     }
   }

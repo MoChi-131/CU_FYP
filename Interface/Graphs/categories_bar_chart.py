@@ -5,18 +5,20 @@ import os
 from MongoDB import retrieve_expense_data
 
 
-def draw_T2_chart(date=None, budget=[]):
+def draw_T2_chart(date, budget, categories):
     # Define the categories and data
-    categories = ["toll", "food", "parking", "transport", "accom", "gasoline", "telecom", "misc"]
     planned_budget = budget  # Planned Budget (bars)
-    actual_expenses = retrieve_expense_data(date)  # Actual Expenses (line)
+    actual_expenses = retrieve_expense_data(date, categories)  # Actual Expenses (line)
+    saving = sum(budget) - sum(actual_expenses)
+    actual_expenses.append(saving)
+    categories = ["Toll", "Food", "Parking", "Transport", "Accom", "Gasoline", "Telecom", "Misc", "Other", "Saving"]
 
     # Create the bar chart for Planned Budget
     plt.figure(figsize=(8, 6))
     plt.bar(categories, planned_budget, color=[0.7, 0.8, 1.0], label='Planned Budget')  # Light blue bars
 
     # Overlay the line for Actual Expenses
-    plt.plot(categories, actual_expenses, 'r-o', linewidth=2, markersize=8, label='Actual Expenses')  # Red line with circles
+    plt.plot(categories, actual_expenses, 'r-o', linewidth=2, markersize=9, label='Actual Expenses')  # Red line with circles
 
     # Customize the title and labels
     plt.title('Planned Budget vs Actual Expenses', fontsize=14, fontweight='bold', pad=20)
@@ -39,6 +41,8 @@ def draw_T2_chart(date=None, budget=[]):
     
     plt.savefig(output_path, bbox_inches='tight')
     print("Saved")
+    
+    return(actual_expenses)
 
 if __name__ == "__main__":
     draw_T2_chart()

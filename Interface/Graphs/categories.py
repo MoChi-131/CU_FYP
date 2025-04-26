@@ -4,13 +4,13 @@ import os
 from MongoDB import retrieve_expense_monthly_data, retrieve_expense_data_weekly
 
 
-def create_expense_plot(current_date=None, mode=None):
+def create_expense_plot(current_date=None, mode=None, categories=[]):
     # Retrieve data from MongoDB
     if mode == None or mode == "Monthly":
-        data = retrieve_expense_monthly_data(current_date)
+        data = retrieve_expense_monthly_data(current_date, categories)
         x_label = data['months']  # Corrected typo from 'x_lable' to 'x_label'
     elif mode == "Weekly":
-        data = retrieve_expense_data_weekly(current_date)
+        data = retrieve_expense_data_weekly(current_date, categories)
         x_label = data['week_labels']
 
     # Extract data
@@ -25,14 +25,15 @@ def create_expense_plot(current_date=None, mode=None):
 
     # Define color palette (RGB)
     color_palette = [
-        [1.0, 0.4, 0.4],
-        [0.2, 0.6, 0.3],
-        [0.8, 0.5, 0.2],
-        [0.68, 0.85, 0.90],
-        [0.7, 0.7, 0.7],
-        [0.5, 0.5, 1.0],
-        [1.0, 0.8, 0.2],
-        [0.6, 0.4, 0.8]
+        [1.0, 0.4, 0.4],  # Reddish
+        [0.2, 0.6, 0.3],  # Greenish
+        [0.8, 0.5, 0.2],  # Orangish
+        [0.68, 0.85, 0.90],  # Light blue
+        [0.7, 0.7, 0.7],  # Gray
+        [0.5, 0.5, 1.0],  # Blue
+        [1.0, 0.8, 0.2],  # Yellowish
+        [0.6, 0.4, 0.8],  # Purple
+        [0.9, 0.3, 0.6]   # Pinkish
     ]
 
     # Map categories to colors

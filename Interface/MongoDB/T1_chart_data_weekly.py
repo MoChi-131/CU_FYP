@@ -1,10 +1,7 @@
 from pymongo import MongoClient
 from datetime import datetime, timedelta
 
-def retrieve_expense_data_weekly(current_date=None):
-    if current_date is None:
-        current_date = datetime.now()
-
+def retrieve_expense_data_weekly(current_date, categories):
     # Get Sunday of current week (start of week)
     start_date = current_date - timedelta(days=current_date.weekday())  # Sunday
     end_date = start_date + timedelta(days=6)  # Saturday
@@ -16,10 +13,7 @@ def retrieve_expense_data_weekly(current_date=None):
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
     db = client["Personal_Accounting"]
-    collection = db["Reciept_Full_Detail"]
-
-    # Define categories
-    categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous"]
+    collection = db["Full_Detail"]
 
     # Initialize category data for each day of the week
     category_data = {category: [0] * 7 for category in categories}  # One slot for each day of the week
@@ -48,7 +42,7 @@ def retrieve_expense_data_weekly(current_date=None):
                     "category": "$Category",
                     "day_of_week": "$day_of_week"
                 },
-                "total_amount": {"$sum": "$Total Amount"}
+                "total_amount": {"$sum": "$Money Out"}
             }
         }
     ]

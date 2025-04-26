@@ -5,8 +5,8 @@ import os
 
 from MongoDB import fetch_category_data
 
-def draw_pie_chart(date):
-    data, categories = fetch_category_data(date)
+def draw_pie_chart(date, categories):
+    data, categories = fetch_category_data(date, categories)
 
     # Filter out categories with zero values
     filtered_data_labels = [(d, c) for d, c in zip(data, categories) if d > 0]
@@ -17,14 +17,15 @@ def draw_pie_chart(date):
     fig, ax = plt.subplots()
 
     color_palette = [
-        [1.0, 0.4, 0.4],
-        [0.2, 0.6, 0.3],
-        [0.8, 0.5, 0.2],
-        [0.68, 0.85, 0.90],
-        [0.7, 0.7, 0.7],
-        [0.5, 0.5, 1.0],
-        [1.0, 0.8, 0.2],
-        [0.6, 0.4, 0.8]
+        [1.0, 0.4, 0.4],  # Reddish
+        [0.2, 0.6, 0.3],  # Greenish
+        [0.8, 0.5, 0.2],  # Orangish
+        [0.68, 0.85, 0.90],  # Light blue
+        [0.7, 0.7, 0.7],  # Gray
+        [0.5, 0.5, 1.0],  # Blue
+        [1.0, 0.8, 0.2],  # Yellowish
+        [0.6, 0.4, 0.8],  # Purple
+        [0.9, 0.3, 0.6]   # Pinkish
     ]
 
     # Create a dictionary mapping categories to colors

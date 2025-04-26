@@ -4,13 +4,13 @@ def Out_monthly(date):
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
     db = client["Personal_Accounting"]  
-    collection = db["Money_Out"]  
+    collection = db["Full_Detail"]  
 
     # Define Aggregation Pipeline
     pipeline = [
             {
             "$match": {
-                "Date": { "$regex": date }  # Match dates starting with "2025-01-"
+                "Date": { "$regex": date } 
             }
         },
         {

@@ -29,7 +29,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {% for i in range(8) %}
+                    {% for i in range(9) %}
                         <tr>
                             <td>{{ categories[i] }}</td>
                             <td>£{{ budget[i] | round(2) }}</td>
@@ -42,8 +42,20 @@
                                     <span>£{{ net | round(2) }}</span>
                                 {% endif %}
                             </td>
-                        </tr>
                     {% endfor %}
+                        <tr>
+                            <td>{{ categories[9] }}</td>
+                            <td>£{{ budget[9] | round(2) }}</td>
+                            <td>£{{ chart_data[9] | round(2) }}</td>
+                            <td>
+                                {% set net = chart_data[9] - budget[9] %}
+                                {% if net < 0 %}
+                                    <span style="color: red;">£{{ net | round(2) }}</span>
+                                {% else %}
+                                    <span>£{{ net | round(2) }}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
                 </tbody>
             </table>
         </div>

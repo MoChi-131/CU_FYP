@@ -2,18 +2,11 @@ from pymongo import MongoClient
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-def retrieve_expense_monthly_data(current_date=None):
-    # Use provided date or default to test date
-    if current_date is None:
-        current_date = datetime(2025, 3, 20)  # Replace with datetime.now() for real-time use
-        
+def retrieve_expense_monthly_data(current_date, categories):        
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
     db = client["Personal_Accounting"]
-    collection = db["Reciept_Full_Detail"]
-
-    # Define categories
-    categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous"]
+    collection = db["Full_Detail"]
 
     # Calculate date range
     end_date = current_date.replace(day=1) + relativedelta(months=1, days=-1)  # Last day of current month
@@ -51,7 +44,7 @@ def retrieve_expense_monthly_data(current_date=None):
                     }
                 },
                 "total_amount": {
-                    "$sum": "$Total Amount"
+                    "$sum": "$Money Out"
                 }
             }
         }

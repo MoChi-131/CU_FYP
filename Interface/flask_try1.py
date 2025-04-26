@@ -6,7 +6,6 @@ from pymongo import MongoClient
 from dateutil.relativedelta import relativedelta
 import imghdr
 import os
-import sys
 import magic
 import subprocess
 
@@ -31,8 +30,8 @@ app.config['UPLOAD_PATH'] = 'static/uploads'
 
 
 today = datetime.datetime.now()
-categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous"]
-user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250]
+categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other"]
+user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
 file_path = ""
 
 
@@ -61,7 +60,7 @@ def home(username):
     else:
         available_budget = 0
     
-    draw_pie_chart(current_month)
+    draw_pie_chart(current_month, categories)
 
     return render_template("Dashboard.html", username=username, date=today, income=total_income, expense=total_expense, budget=available_budget)
 
@@ -70,10 +69,10 @@ def home(username):
 def trend_1(username):
     if request.method == "POST":
         mode = request.form.get('time_period')
-        create_expense_plot(today, mode)
+        create_expense_plot(today, mode, categories)
     else:
         mode = "Monthly"
-        create_expense_plot(today, mode)
+        create_expense_plot(today, mode, categories)
     return render_template("Trend_1.html", username=username, categories=categories)
 
 
@@ -81,12 +80,13 @@ def trend_1(username):
 def trend_2(username):
     last_month = today - relativedelta(months=1)
     date = last_month.strftime("%B")
-    chart_data = retrieve_expense_data(today)
-    budget = user_budget[2:-1]
+    chart_data = retrieve_expense_data(today, categories)
+    budget = list(budget_data(last_month.strftime("%Y-%m")).values())
 
-    draw_T2_chart(today,budget)
+    chart_data = draw_T2_chart(today, budget, categories)
+    T2_categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other", "Saving"]
        
-    return render_template("Trend_2.html", username=username, date=date, chart_data = chart_data, categories=categories, budget = budget)
+    return render_template("Trend_2.html", username=username, date=date, chart_data = chart_data, categories= T2_categories, budget = budget)
 
 
 @app.route("/<username>/Budget",  methods=["GET", "POST"])
