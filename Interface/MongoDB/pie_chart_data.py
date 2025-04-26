@@ -7,8 +7,8 @@ def fetch_category_data(date):
 
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
-    db = client["Receipts"]
-    collection = db["Full_Detail"]
+    db = client["Personal_Accounting"]
+    collection = db["Reciept_Full_Detail"]
 
     for category in categories:
         pipeline = [

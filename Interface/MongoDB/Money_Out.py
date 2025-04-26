@@ -3,8 +3,8 @@ from pymongo import MongoClient
 def agg_money_out():
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
-    db = client["Bank_Statements"]  # Your database
-    collection = db["Raw_Data"]  # Replace with your collection
+    db = client["Personal_Accounting"]  # Your database
+    collection = db["Bank_Statement"]  # Replace with your collection
 
     # Define Aggregation Pipeline
     pipeline = [

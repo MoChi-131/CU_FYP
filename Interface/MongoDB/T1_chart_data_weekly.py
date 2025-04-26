@@ -15,8 +15,8 @@ def retrieve_expense_data_weekly(current_date=None):
 
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
-    db = client["Receipts"]
-    collection = db["Full_Detail"]
+    db = client["Personal_Accounting"]
+    collection = db["Reciept_Full_Detail"]
 
     # Define categories
     categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous"]

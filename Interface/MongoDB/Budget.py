@@ -3,7 +3,7 @@ from pymongo import MongoClient
 def budget_data(date):
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
-    db = client["Budget"]  
+    db = client["Personal_Accounting"]  
     collection = db["Budget"]  
 
     # Define Aggregation Pipeline

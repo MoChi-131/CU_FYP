@@ -5,8 +5,8 @@ import os
 
 # MongoDB Connection
 client = pymongo.MongoClient("mongodb://localhost:27018/")  # Change to your MongoDB URI
-db = client["Bank_Statements"]  # Database Name
-collection = db["Raw_Data"]  # Collection Name
+db = client["Personal_Accounting"]  # Database Name
+collection = db["Bank_Statement"]  # Collection Name
 
 def upload_excel():
     # File names

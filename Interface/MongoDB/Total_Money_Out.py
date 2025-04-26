@@ -3,7 +3,7 @@ from pymongo import MongoClient
 def Out_monthly(date):
     # Connect to MongoDB
     client = MongoClient("mongodb://localhost:27018/")
-    db = client["Bank_Statements"]  
+    db = client["Personal_Accounting"]  
     collection = db["Money_Out"]  
 
     # Define Aggregation Pipeline

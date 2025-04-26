@@ -3,7 +3,7 @@ import pymongo
 
 # MongoDB Connection
 client = pymongo.MongoClient("mongodb://localhost:27018/")  # Change to your MongoDB URI
-db = client["Receipts"]  # Database Name
+db = client["Personal_Accounting"] # Database Name
 
 # Function to load CSV into MongoDB
 def load_csv_to_mongo(csv_file, collection_name):
@@ -20,7 +20,7 @@ def load_csv_to_mongo(csv_file, collection_name):
     print(f"Data from {csv_file} successfully inserted into {collection_name}!")
 
 # Insert data into Raw_Data_Details collection
-load_csv_to_mongo(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_Detail.csv", 'Raw_Data_Details')
+load_csv_to_mongo(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_Detail.csv", 'Reciept_Details')
 
 # Insert data into Raw_Data_Items collection
-load_csv_to_mongo(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_Items.csv", 'Raw_Data_Items')
+load_csv_to_mongo(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_Items.csv", 'Reciept_Items')

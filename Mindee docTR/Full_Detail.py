@@ -2,8 +2,8 @@ from pymongo import MongoClient
 
 # Connect to MongoDB
 client = MongoClient("mongodb://localhost:27018/")
-db = client["Receipts"]  # Your database
-collection = db["Raw_Data_Details"]  # Replace with your collection
+db = client["Personal_Accounting"]  # Your database
+collection = db["Reciept_Details"]  # Replace with your collection
 
 # Define Aggregation Pipeline
 pipeline = [
@@ -36,7 +36,7 @@ pipeline = [
         }
     },
     {
-        "$out": "Full_Detail"  # Output the result to the Full_Detail collection
+        "$out": "Reciept_Full_Detail"  # Output the result to the Full_Detail collection
     }
 ]
 
