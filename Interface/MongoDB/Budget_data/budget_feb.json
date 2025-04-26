@@ -1,0 +1,14 @@
+{
+  "month": "2025-02",
+  "categories": {
+    "Toll": 55,
+    "Food": 310,
+    "Parking": 50,
+    "Transport": 95,
+    "Accommodation": 630,
+    "Gasoline": 115,
+    "Telecom": 65,
+    "Miscellaneous": 90,
+    "Saving": 300
+  }
+}

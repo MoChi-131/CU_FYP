@@ -4,3 +4,4 @@ from .T2_chart_data import retrieve_expense_data
 from .T1_chart_data import retrieve_expense_monthly_data
 from .T1_chart_data_weekly import retrieve_expense_data_weekly
 from .pie_chart_data import fetch_category_data
+from .Budget import budget_data
