@@ -31,4 +31,4 @@ def upload_excel():
     # Insert into MongoDB
     collection.insert_many(records)
 
-    print("CSV data successfully inserted into MongoDB!")
+    print("CSV data successfully inserted into MongoDB!!")

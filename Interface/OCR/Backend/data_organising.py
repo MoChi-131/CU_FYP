@@ -11,7 +11,7 @@ def data_cleaning():
     # File names
     input_total = os.getenv("INPUT_TOTAL") or os.path.join(current_dir, '..', 'output_csv', 'Total.csv')
     input_detail = os.getenv("INPUT_DETAIL") or os.path.join(current_dir, '..', 'output_csv', 'Details.csv')
-    excel_file = os.getenv("EXCEL_FILE") or os.path.join(current_dir, '..', 'extracted_data.xlsx')
+    excel_file = os.getenv("EXCEL_FILE") or os.path.join(current_dir, '..','..', 'extracted_data.xlsx')
 
     #data from extracting module
     total_data_dict, detail_data_dict = data_extract()

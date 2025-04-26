@@ -10,7 +10,7 @@ import sys
 import magic
 import subprocess
 
-from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data
+from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data, agg_money_in, agg_money_out
 from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
 from OCR import pdf_extract, data_extract, data_cleaning
 from save_excel import upload_excel
@@ -35,7 +35,8 @@ categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline
 user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250]
 file_path = ""
 
-today= datetime.datetime(2025, 2, 20)
+
+today= datetime.datetime(2025, 3, 20)
 
 #subprocess.run(["python", r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\initial.py"])
 
@@ -50,7 +51,7 @@ def login():
 
 @app.route("/<username>")
 def home(username):
-    current_month = "2025-02" ##rmb
+    current_month = today.strftime("%Y-%m")
     total_income = In_monthly(current_month)
     total_expense = Out_monthly(current_month)
     this_month_budget = budget_data(current_month)
@@ -60,7 +61,6 @@ def home(username):
     else:
         available_budget = 0
     
-    current_month = today.strftime("%Y-%m")
     draw_pie_chart(current_month)
 
     return render_template("Dashboard.html", username=username, date=today, income=total_income, expense=total_expense, budget=available_budget)
@@ -160,6 +160,8 @@ def upload_page(username):
             data_extract() 
             data_cleaning()
             upload_excel()
+            agg_money_in()
+            agg_money_out()
 
         return render_template("Upload.html", username=username, files=files)
 
