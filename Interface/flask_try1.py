@@ -9,7 +9,8 @@ import os
 import magic
 import subprocess
 
-from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data
+from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data, \
+    write_Budget, update_Budget
 from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
 from Save_Data import Save_BS
 
@@ -90,7 +91,8 @@ def trend_2(username):
 
 @app.route("/<username>/Budget",  methods=["GET", "POST"])
 def budget(username):
-    date = today.strftime("%B")
+    next_month = today + relativedelta(months=1)
+    date = next_month.strftime("%B")
     global user_budget
     income = [user_budget[0], user_budget[1]]
     
@@ -108,7 +110,16 @@ def budget(username):
 
         # Reconstruct full budget list
         new_budget = [wadge, other] + expenses + [saving]
+        
+        next_month = next_month.strftime("%Y-%m")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.getenv("New_Budget") or os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month}.json")
 
+        if os.path.exists(file_path):
+            print(update_Budget(next_month, new_budget, file_path))
+        else:
+            write_Budget(next_month, new_budget, file_path)
+            
         sankey(new_budget)
         user_budget= new_budget
         print("Updated Budget:", user_budget)
