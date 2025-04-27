@@ -31,12 +31,22 @@ app.config['UPLOAD_PATH'] = 'static/uploads'
 
 today = datetime.datetime.now()
 categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous", "other"]
-user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
 file_path = ""
 
 
 today= datetime.datetime(2025, 3, 31)
 
+next_month = today + relativedelta(months=1)
+next_month_date = next_month.strftime("%Y-%m")
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.getenv("New_Budget") or os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month_date}.json")        
+if os.path.exists(file_path):
+    user_budget = list(budget_data(next_month_date).values())
+else:
+    user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
+
+    
 #subprocess.run(["python", r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\initial.py"])
 
 
@@ -91,7 +101,8 @@ def trend_2(username):
 
 @app.route("/<username>/Budget",  methods=["GET", "POST"])
 def budget(username):
-    next_month = today + relativedelta(months=1)
+
+    global next_month
     date = next_month.strftime("%B")
     global user_budget
     income = [user_budget[0], user_budget[1]]
@@ -111,14 +122,13 @@ def budget(username):
         # Reconstruct full budget list
         new_budget = [wadge, other] + expenses + [saving]
         
-        next_month = next_month.strftime("%Y-%m")
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        file_path = os.getenv("New_Budget") or os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month}.json")
-
+        month = next_month.strftime("%Y-%m")
+        
         if os.path.exists(file_path):
-            print(update_Budget(next_month, new_budget, file_path))
+            update_Budget(month, new_budget, file_path)
+            print("Enter")
         else:
-            write_Budget(next_month, new_budget, file_path)
+            write_Budget(month, new_budget, file_path)
             
         sankey(new_budget)
         user_budget= new_budget
