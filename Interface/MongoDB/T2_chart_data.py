@@ -29,7 +29,14 @@ def retrieve_expense_data(current_date, categories):
             {
                 "$group": {
                     "_id": "$Category",
-                    "total_amount": {"$sum": "$Money Out"}
+                    "total_amount": {
+                            "$sum": {
+                                "$add": [
+                                    {"$ifNull": ["$Money Out", 0]},
+                                    {"$ifNull": ["$Total Amount", 0]}
+                                ]
+                            }
+                        }
                 }
             }
         ]

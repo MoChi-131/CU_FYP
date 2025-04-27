@@ -16,7 +16,14 @@ def Out_monthly(date):
         {
             "$group": {
                 "_id": None,
-                "Total": {"$sum": "$Money Out"},
+                "total_amount": {
+                            "$sum": {
+                                "$add": [
+                                    {"$ifNull": ["$Money Out", 0]},
+                                    {"$ifNull": ["$Total Amount", 0]}
+                                ]
+                            }
+                        }
             }
         },
         {
@@ -29,6 +36,8 @@ def Out_monthly(date):
 
     if not result:
             return 0  # If no documents matched, return 0
+    else: 
+        total = result[0]["total_amount"]
 
-    return result[0]["Total"]  # Just return the total number
+    return total
         

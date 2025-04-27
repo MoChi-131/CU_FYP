@@ -9,10 +9,9 @@ import os
 import magic
 import subprocess
 
-from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data, agg_money_in, agg_money_out
+from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data
 from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
-from OCR import pdf_extract, data_extract, data_cleaning
-from save_excel import upload_excel
+from Save_Data import Save_BS
 
 
 client = MongoClient("mongodb://localhost:27018/")
@@ -30,12 +29,12 @@ app.config['UPLOAD_PATH'] = 'static/uploads'
 
 
 today = datetime.datetime.now()
-categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other"]
+categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous", "other"]
 user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
 file_path = ""
 
 
-today= datetime.datetime(2025, 3, 20)
+today= datetime.datetime(2025, 3, 31)
 
 #subprocess.run(["python", r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\initial.py"])
 
@@ -56,7 +55,7 @@ def home(username):
     this_month_budget = budget_data(current_month)
     
     if this_month_budget != 0:
-        available_budget = sum(this_month_budget.values()) - total_expense
+        available_budget = round((sum(this_month_budget.values()) - total_expense), 2)
     else:
         available_budget = 0
     
@@ -156,12 +155,9 @@ def upload_page(username):
         category = request.form.get("category")  # Use form not get_data
 
         if category == "bank":
-            pdf_extract(file_path)
-            data_extract() 
-            data_cleaning()
-            upload_excel()
-            agg_money_in()
-            agg_money_out()
+            global file_path 
+            Save_BS(file_path)
+
 
         return render_template("Upload.html", username=username, files=files)
 

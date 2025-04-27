@@ -22,8 +22,13 @@ def fetch_category_data(date, categories):
                 "$group": {
                     "_id": "$Category",
                     "total_amount": {
-                        "$sum": "$Money Out"
-                    }
+                            "$sum": {
+                                "$add": [
+                                    {"$ifNull": ["$Money Out", 0]},
+                                    {"$ifNull": ["$Total Amount", 0]}
+                                ]
+                            }
+                        }
                 }
             }
         ]

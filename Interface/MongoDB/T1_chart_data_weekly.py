@@ -20,32 +20,46 @@ def retrieve_expense_data_weekly(current_date, categories):
 
     # Aggregation pipeline for this week only
     pipeline = [
-        {
-            "$match": {
-                "Category": {"$in": categories},
-                "Date": {
-                    "$gte": start_date.strftime('%Y-%m-%d'),
-                    "$lte": end_date.strftime('%Y-%m-%d')
-                }
-            }
-        },
-        {
-            "$addFields": {
-                "day_of_week": {
-                    "$dayOfWeek": {"$dateFromString": {"dateString": "$Date"}}
-                }
-            }
-        },
-        {
-            "$group": {
-                "_id": {
-                    "category": "$Category",
-                    "day_of_week": "$day_of_week"
+                {
+                    "$match": {
+                        "Category": {"$in": categories},
+                        "Date": {
+                            "$gte": start_date.strftime('%Y-%m-%d'),
+                            "$lte": end_date.strftime('%Y-%m-%d')
+                        }
+                    }
                 },
-                "total_amount": {"$sum": "$Money Out"}
-            }
-        }
-    ]
+                {
+                    "$addFields": {
+                        "parsed_date": {
+                            "$dateFromString": {"dateString": "$Date"}
+                        }
+                    }
+                },
+                {
+                    "$addFields": {
+                        "day_of_week": {
+                            "$dayOfWeek": "$parsed_date"
+                        }
+                    }
+                },
+                {
+                    "$group": {
+                        "_id": {
+                            "category": "$Category",
+                            "day_of_week": "$day_of_week"
+                        },
+                        "total_amount": {
+                            "$sum": {
+                                "$add": [
+                                    {"$ifNull": ["$Money Out", 0]},
+                                    {"$ifNull": ["$Total Amount", 0]}
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
 
     results = collection.aggregate(pipeline)
 

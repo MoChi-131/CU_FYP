@@ -28,7 +28,6 @@ def retrieve_expense_monthly_data(current_date, categories):
     pipeline = [
         {
             "$match": {
-                "Category": {"$in": categories},
                 "Date": {
                     "$gte": start_date.strftime('%Y-%m-%d'),
                     "$lte": end_date.strftime('%Y-%m-%d')
@@ -44,8 +43,13 @@ def retrieve_expense_monthly_data(current_date, categories):
                     }
                 },
                 "total_amount": {
-                    "$sum": "$Money Out"
-                }
+                    "$sum": {
+                        "$add": [
+                            {"$ifNull": ["$Money Out", 0]},
+                            {"$ifNull": ["$Total Amount", 0]}
+                        ]}
+                    }
+
             }
         }
     ]
