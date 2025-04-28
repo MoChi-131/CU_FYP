@@ -58,7 +58,7 @@ def draw_pie_chart(date, categories):
     output_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'pie_chart.png')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    plt.savefig(output_path, bbox_inches='tight')
+    plt.savefig(output_path, bbox_inches='tight', dpi=300)
     print("Saved")
 
 if __name__ == "__main__":

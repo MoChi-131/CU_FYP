@@ -11,7 +11,7 @@ def draw_T2_chart(date, budget, categories):
     actual_expenses = retrieve_expense_data(date, categories)  # Actual Expenses (line)
     saving = sum(budget) - sum(actual_expenses)
     actual_expenses.append(saving)
-    categories = ["Toll", "Food", "Parking", "Transport", "Accom", "Gasoline", "Telecom", "Misc", "Other", "Saving"]
+    categories = ["Toll", "Food", "Park", "Transport", "Accom", "Gas", "Telecom", "Misc", "Other", "Saving"]
 
     # Create the bar chart for Planned Budget
     plt.figure(figsize=(8, 6))
@@ -39,7 +39,7 @@ def draw_T2_chart(date, budget, categories):
     output_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'Trend_2.png')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    plt.savefig(output_path, bbox_inches='tight')
+    plt.savefig(output_path, bbox_inches='tight', dpi=300)
     print("Saved")
     
     return(actual_expenses)

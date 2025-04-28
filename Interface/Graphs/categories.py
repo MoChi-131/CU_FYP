@@ -20,9 +20,6 @@ def create_expense_plot(current_date=None, mode=None, categories=[]):
     start_date = data['start_date']
     end_date = data['end_date']
 
-    # Calculate total for each category
-    category_totals = {category: round(sum(category_data[category]), 2) for category in categories}
-
     # Define color palette (RGB)
     color_palette = [
         [1.0, 0.4, 0.4],  # Reddish
@@ -42,7 +39,7 @@ def create_expense_plot(current_date=None, mode=None, categories=[]):
     # Set up plot
     ind = np.arange(len(x_label))
     width = 0.6
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6))
 
     # Plot stacked bars and add segment labels
     bottom = np.zeros(len(x_label))
@@ -95,10 +92,10 @@ def create_expense_plot(current_date=None, mode=None, categories=[]):
     ax.set_ylim(0, max(stack_totals) * 1.2)  # Extra space for stack totals
 
     # Save the figure
-    plt.tight_layout()
+    plt.subplots_adjust(left=0.05, right=0.75, top=0.9, bottom=0.1)
     current_dir = os.path.dirname(os.path.abspath(__file__))
     save_path = os.getenv("OUTPUT_PATH") or os.path.join(current_dir, '..', 'static', 'Trend_1.png')
-    plt.savefig(save_path)
+    plt.savefig(save_path, dpi=300)
     plt.close()
 
 if __name__ == "__main__":
