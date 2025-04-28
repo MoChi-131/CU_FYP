@@ -1,6 +1,8 @@
 {
     "month": "2025-01",
     "categories": {
+      "Wadge": 2000.0,
+      "Other_Income": 250.0,
       "Toll": 45,
       "Food": 320,
       "Parking": 35,

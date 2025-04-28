@@ -66,7 +66,7 @@ def home(username):
     this_month_budget = budget_data(current_month)
     
     if this_month_budget != 0:
-        available_budget = round((sum(this_month_budget.values()) - total_expense), 2)
+        available_budget = round((sum(this_month_budget.values()) - total_expense - this_month_budget["Wadge"] - this_month_budget["Other_Income"]), 2)
     else:
         available_budget = 0
     
@@ -92,6 +92,8 @@ def trend_2(username):
     date = last_month.strftime("%B")
     chart_data = retrieve_expense_data(today, categories)
     budget = list(budget_data(last_month.strftime("%Y-%m")).values())
+    budget = budget[2:]
+    print(budget)
 
     chart_data = draw_T2_chart(today, budget, categories)
     T2_categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other", "Saving"]
