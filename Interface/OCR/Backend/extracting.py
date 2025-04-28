@@ -97,8 +97,9 @@ def data_extract():
                             keyword_index += 1  # Move to next transaction field
 
                         else:  # Extract balance details
-                            last_sentence = "@ Report lost or stolen card"
-                            while pages[1][line[0] + row_offset] != last_sentence:
+                            last_sentence_1 = "@ Report lost or stolen card"
+                            last_sentence_2 = "Report lost or stolen card"
+                            while (pages[1][line[0] + row_offset] != last_sentence_1) and (pages[1][line[0] + row_offset] != last_sentence_2):
                                 extract_values(pages, line, detail_data_dict, keyword_index, row_offset)
                                 row_offset += 1
 
