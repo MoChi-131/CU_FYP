@@ -12,7 +12,7 @@ import subprocess
 from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data, \
     write_Budget, update_Budget
 from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
-from Save_Data import Save_BS
+from Save_Data import Save_BS, Save_Reciept
 
 
 client = MongoClient("mongodb://localhost:27018/")
@@ -31,7 +31,7 @@ app.config['UPLOAD_PATH'] = 'static/uploads'
 
 today = datetime.datetime.now()
 categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous", "other"]
-file_path = ""
+upload_path = ""
 
 
 today= datetime.datetime(2025, 3, 31)
@@ -40,7 +40,7 @@ next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.getenv("New_Budget") or os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month_date}.json")        
+file_path = os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month_date}.json")        
 if os.path.exists(file_path):
     user_budget = list(budget_data(next_month_date).values())
 else:
@@ -175,11 +175,14 @@ def upload_page(username):
     files = os.listdir(app.config['UPLOAD_PATH'])
 
     if request.method == "POST":
+        print("Here")
         category = request.form.get("category")  # Use form not get_data
 
+        global upload_path 
         if category == "bank":
-            global file_path 
-            Save_BS(file_path)
+            Save_BS(upload_path)
+        else:
+            Save_Reciept(upload_path)
 
 
         return render_template("Upload.html", username=username, files=files)
@@ -198,9 +201,9 @@ def upload_files():
             return "File extension not allowed", 400
         if not validate_file(uploaded_file.stream, file_ext):
             return "Invalid file format", 400
-        global file_path 
-        file_path= os.path.join(app.config['UPLOAD_PATH'], filename)
-        uploaded_file.save(file_path)
+        global upload_path 
+        upload_path= os.path.join(app.config['UPLOAD_PATH'], filename)
+        uploaded_file.save(upload_path)
                 
     return '', 204
 
