@@ -10,8 +10,30 @@ def Full_Out():
         {
             "$lookup": {
                 "from": "Reciept_Full_Detail",
-                "localField": "Description",
-                "foreignField": "Supplier Name",
+                "let": {
+                    "desc": "$Description",
+                    "money_out": "$Money Out"
+                },
+                "pipeline": [
+                    {
+                        "$match": {
+                            "$expr": {
+                                "$and": [
+                                    {
+                                        "$regexMatch": {
+                                            "input": "$Supplier Name",
+                                            "regex": { "$concat": [".*", { "$trim": { "input": "$$desc" } }, ".*"] },
+                                            "options": "i"
+                                        }
+                                    },
+                                    {
+                                        "$eq": ["$Total Amount", "$$money_out"]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
                 "as": "Reciept"
             }
         },
@@ -19,17 +41,8 @@ def Full_Out():
             "$addFields": {
                 "Category": {
                     "$cond": {
-                        "if": {
-                            "$gt": [
-                                {
-                                    "$size": "$Reciept"
-                                },
-                                0
-                            ]
-                        },
-                        "then": {
-                            "$arrayElemAt": ["$Reciept.Category", 0]
-                        },
+                        "if": {"$gt": [{"$size": "$Reciept"}, 0]},
+                        "then": {"$arrayElemAt": ["$Reciept.Category", 0]},
                         "else": "other"
                     }
                 }
@@ -42,7 +55,7 @@ def Full_Out():
             }
         }
     ]
-
+    
     print("Saved in Full_Detail")
     
     return collection.aggregate(pipeline)

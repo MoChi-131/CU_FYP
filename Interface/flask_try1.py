@@ -30,11 +30,11 @@ app.config['UPLOAD_PATH'] = 'static/uploads'
 
 
 today = datetime.datetime.now()
-categories = ["toll", "food", "parking", "transport", "accommodation", "gasoline", "telecom", "miscellaneous", "other"]
+categories = ["toll", "food", "parking", "transport", "accommodation", "shopping", "telecom", "miscellaneous", "other"]
 upload_path = ""
 
 
-today= datetime.datetime(2025, 3, 31)
+#today= datetime.datetime(2025, 3, 31)
 
 next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
@@ -96,7 +96,7 @@ def trend_2(username):
     print(budget)
 
     chart_data = draw_T2_chart(today, budget, categories)
-    T2_categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous", "Other", "Saving"]
+    T2_categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Shopping", "Telecom", "Miscellaneous", "Other", "Saving"]
        
     return render_template("Trend_2.html", username=username, date=date, chart_data = chart_data, categories= T2_categories, budget = budget)
 

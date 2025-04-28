@@ -43,15 +43,22 @@ def data_cleaning():
                 filtered.append(detail)
             elif "transfer to revolut user" in detail.lower():
                 i += 1
-            elif ("to" in detail.lower())or ("reference: to" in detail.lower()):
+            elif ("to" in detail.lower()) or  ("reference: to" in detail.lower()):
+                if ("to:" in detail.lower()) or ("to'" in detail.lower()):
+                    print(previous_detail)
+                    filtered.append(previous_detail)
+                else:
+                    filtered.append(detail)
+                    
                 new_Money_out.append(old_Money_out[old_Money_out_index] if old_Money_out_index < len(old_Money_out) else 0.0)
                 old_Money_out_index += 1
                 new_Money_in.append(0.0)
-                filtered.append(detail)
             else:
                 i +=1
         i += 1
+        previous_detail = detail
     print(filtered)
+    
     # Update filtered data in dictionary
     detail_data_dict["Description"] = filtered
     detail_data_dict["Money in"] = new_Money_in

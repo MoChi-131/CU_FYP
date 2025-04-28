@@ -11,7 +11,7 @@ def draw_T2_chart(date, budget, categories):
     actual_expenses = retrieve_expense_data(date, categories)  # Actual Expenses (line)
     saving = sum(budget) - sum(actual_expenses)
     actual_expenses.append(saving)
-    categories = ["Toll", "Food", "Park", "Transport", "Accom", "Gas", "Telecom", "Misc", "Other", "Saving"]
+    categories = ["Toll", "Food", "Park", "Transport", "Accom", "Shop", "Telecom", "Misc", "Other", "Saving"]
 
     # Create the bar chart for Planned Budget
     plt.figure(figsize=(8, 6))
