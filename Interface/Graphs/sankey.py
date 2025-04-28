@@ -21,7 +21,7 @@ def sankey(data):
             pad=15,
             thickness=20,
             line=dict(color="black", width=0.5),
-            label=['Wages', 'Others', 'Budget', 'Toll', 'Food', 'Parking', 'Transport', 'Accommodation', 'Shopping', 'Telecom', 'Miscellaneous', 'Savings', 'Other'],
+            label=['Wages', 'Others', 'Budget', 'Toll', 'Food', 'Parking', 'Transport', 'Accommodation', 'Shopping', 'Telecom', 'Miscellaneous', 'Other', 'Savings'],
             color=node_colors
         ),
         link=dict(

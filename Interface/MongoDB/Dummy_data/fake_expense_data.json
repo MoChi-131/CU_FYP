@@ -1,292 +1,182 @@
 [
     {
         "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bd4"
+            "$oid": "680ff46e0910823ad21880d6"
         },
-        "Supplier Name": "Lane Group",
-        "Receipt Number": 2246439,
-        "Date": "2025-03-30",
-        "Time": "23:33:11",
-        "Category": "toll",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "62548 Justin Shoal\nLake Anthonyton, HI 86306",
-        "Supplier Phone Number": "352-689-5753x9000",
-        "Locale": "en-US",
-        "Total Amount": 411.89,
-        "Total Net": 24.93,
-        "Total Tax": 8.05,
-        "Tip and Gratuity": 13.88,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bd5"
-                },
-                "Description": "innovate e-business web-readiness",
-                "Quantity": 1,
-                "Unit Price": 111.1,
-                "Total Price": 313.41
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bd6"
-        },
-        "Supplier Name": "Harris Inc",
-        "Receipt Number": 7533576,
-        "Date": "2025-03-09",
-        "Time": "13:41:16",
+        "Supplier Name": "Hardy PLC",
+        "Receipt Number": 4537395,
+        "Date": "2025-02-13",
+        "Time": "21:25:32",
         "Category": "food",
         "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "PSC 3699, Box 7638\nAPO AA 05815",
-        "Supplier Phone Number": "8193518580",
+        "Supplier Address": "3752 Petersen Lake\nAlexandratown, HI 89597",
+        "Supplier Phone Number": "(428)788-4037",
         "Locale": "en-US",
-        "Total Amount": 297.87,
-        "Total Net": 289.65,
-        "Total Tax": 9.92,
-        "Tip and Gratuity": null,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bd7"
-                },
-                "Description": "extend leading-edge markets",
-                "Quantity": 5,
-                "Unit Price": 125.72,
-                "Total Price": 429.13
-            }
-        ]
+        "Total Amount": 22.3,
+        "Total Net": 106.08,
+        "Total Tax": 6.71,
+        "Tip and Gratuity": 5.41
     },
     {
         "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bd8"
+            "$oid": "680ff46e0910823ad21880d7"
         },
-        "Supplier Name": "Glass-Hernandez",
-        "Receipt Number": 9662768,
-        "Date": "2025-03-01",
-        "Time": "16:04:52",
-        "Category": "miscellaneous",
+        "Supplier Name": "Davis-Schmidt",
+        "Receipt Number": 6189129,
+        "Date": "2025-02-04",
+        "Time": "14:48:56",
+        "Category": "parking",
         "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "2568 Jessica Common Suite 918\nGregoryville, FM 88158",
-        "Supplier Phone Number": "+1-718-824-5305x737",
+        "Supplier Address": "4097 Adam Springs Suite 259\nEast Adriennechester, ND 91278",
+        "Supplier Phone Number": "+1-945-396-7970x07043",
         "Locale": "en-US",
-        "Total Amount": 488.95,
-        "Total Net": 243.81,
-        "Total Tax": 18.94,
-        "Tip and Gratuity": 9.84,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bd9"
-                },
-                "Description": "synthesize world-class users",
-                "Quantity": 1,
-                "Unit Price": 15.74,
-                "Total Price": 466.67
-            }
-        ]
+        "Total Amount": 17.38,
+        "Total Net": 492.08,
+        "Total Tax": 16.67,
+        "Tip and Gratuity": 19.84
     },
     {
         "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bda"
+            "$oid": "680ff46e0910823ad21880d8"
         },
-        "Supplier Name": "Walker Inc",
-        "Receipt Number": 1827585,
-        "Date": "2025-03-20",
-        "Time": "23:43:44",
+        "Supplier Name": "Ferrell, Ryan and Ruiz",
+        "Receipt Number": 4392915,
+        "Date": "2025-02-22",
+        "Time": "09:51:41",
+        "Category": "shopping",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "073 Timothy Gateway\nNew Barbaraport, SC 66944",
+        "Supplier Phone Number": "+1-523-416-7342x44279",
+        "Locale": "en-US",
+        "Total Amount": 73.83,
+        "Total Net": 471.65,
+        "Total Tax": 9.21,
+        "Tip and Gratuity": null
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880d9"
+        },
+        "Supplier Name": "Williams and Sons",
+        "Receipt Number": 5060161,
+        "Date": "2025-02-11",
+        "Time": "19:22:11",
+        "Category": "toll",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "7761 Michelle Divide Suite 733\nEast Elizabethmouth, MP 63553",
+        "Supplier Phone Number": "001-736-248-1019x5058",
+        "Locale": "en-US",
+        "Total Amount": 63.75,
+        "Total Net": 90.59,
+        "Total Tax": 15.48,
+        "Tip and Gratuity": null
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880da"
+        },
+        "Supplier Name": "Garrison-May",
+        "Receipt Number": 7332975,
+        "Date": "2025-02-15",
+        "Time": "22:12:31",
+        "Category": "toll",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "95292 Robert Brooks\nWest Shannon, DE 16975",
+        "Supplier Phone Number": "794-848-1077x81462",
+        "Locale": "en-US",
+        "Total Amount": 28.45,
+        "Total Net": 113.38,
+        "Total Tax": 14.98,
+        "Tip and Gratuity": null
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880db"
+        },
+        "Supplier Name": "Miranda Ltd",
+        "Receipt Number": 9791592,
+        "Date": "2025-02-27",
+        "Time": "22:50:44",
+        "Category": "shopping",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "095 Clark Locks\nCharlesport, OK 25813",
+        "Supplier Phone Number": "001-796-569-9655x405",
+        "Locale": "en-US",
+        "Total Amount": 17.12,
+        "Total Net": 332.36,
+        "Total Tax": 16.4,
+        "Tip and Gratuity": 7.15
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880dc"
+        },
+        "Supplier Name": "Griffith, Watson and Ward",
+        "Receipt Number": 3874007,
+        "Date": "2025-02-12",
+        "Time": "03:14:02",
+        "Category": "parking",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "84076 Gregory Grove\nKarenberg, NM 88689",
+        "Supplier Phone Number": "001-595-274-4354",
+        "Locale": "en-US",
+        "Total Amount": 47.72,
+        "Total Net": 300.0,
+        "Total Tax": 12.82,
+        "Tip and Gratuity": null
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880dd"
+        },
+        "Supplier Name": "Park, Ross and Jenkins",
+        "Receipt Number": 8466725,
+        "Date": "2025-02-02",
+        "Time": "01:52:45",
+        "Category": "toll",
+        "Document Type": "EXPENSE RECEIPT",
+        "Supplier Address": "117 Williams Pine Apt. 898\nNorth Tracyport, AL 22095",
+        "Supplier Phone Number": "+1-943-461-5383x860",
+        "Locale": "en-US",
+        "Total Amount": 40.16,
+        "Total Net": 134.06,
+        "Total Tax": 4.89,
+        "Tip and Gratuity": null
+    },
+    {
+        "_id": {
+            "$oid": "680ff46e0910823ad21880de"
+        },
+        "Supplier Name": "Baxter and Sons",
+        "Receipt Number": 6524947,
+        "Date": "2025-02-15",
+        "Time": "07:14:02",
         "Category": "telecom",
         "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "947 Martinez Plaza\nEast Daniellebury, VI 01194",
-        "Supplier Phone Number": "+1-992-308-2384x40904",
+        "Supplier Address": "68555 Kelly Vista\nWest Lawrence, MS 41558",
+        "Supplier Phone Number": "217.452.6236",
         "Locale": "en-US",
-        "Total Amount": 122.27,
-        "Total Net": 158.96,
-        "Total Tax": 13.42,
-        "Tip and Gratuity": null,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bdb"
-                },
-                "Description": "deploy virtual web-readiness",
-                "Quantity": 4,
-                "Unit Price": 76.71,
-                "Total Price": 336.2
-            }
-        ]
+        "Total Amount": 74.2,
+        "Total Net": 294.27,
+        "Total Tax": 3.36,
+        "Tip and Gratuity": null
     },
     {
         "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bdc"
+            "$oid": "680ff46e0910823ad21880df"
         },
-        "Supplier Name": "Green, Villarreal and Bates",
-        "Receipt Number": 3855130,
-        "Date": "2025-03-01",
-        "Time": "01:42:04",
-        "Category": "gasoline",
+        "Supplier Name": "Johnson and Sons",
+        "Receipt Number": 6240942,
+        "Date": "2025-02-04",
+        "Time": "10:39:12",
+        "Category": "parking",
         "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "9714 Mary Tunnel\nSouth Laura, ID 23573",
-        "Supplier Phone Number": "872.268.6078x3169",
+        "Supplier Address": "0499 Santana Parkways\nLake Christian, MH 37382",
+        "Supplier Phone Number": "001-585-673-6024x96995",
         "Locale": "en-US",
-        "Total Amount": 196.62,
-        "Total Net": 442.98,
-        "Total Tax": 18.22,
-        "Tip and Gratuity": 14.04,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bdd"
-                },
-                "Description": "innovate impactful functionalities",
-                "Quantity": 4,
-                "Unit Price": 76.46,
-                "Total Price": 288.84
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0bde"
-        },
-        "Supplier Name": "Smith, Harris and Stuart",
-        "Receipt Number": 5261608,
-        "Date": "2025-03-23",
-        "Time": "12:45:14",
-        "Category": "miscellaneous",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "8335 Keller Loop Suite 786\nBarajasport, OR 34978",
-        "Supplier Phone Number": "973-995-0823x3537",
-        "Locale": "en-US",
-        "Total Amount": 451.55,
-        "Total Net": 38.17,
-        "Total Tax": 6.49,
-        "Tip and Gratuity": 10.57,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0bdf"
-                },
-                "Description": "e-enable customized functionalities",
-                "Quantity": 4,
-                "Unit Price": 119.51,
-                "Total Price": 187.23
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0be0"
-        },
-        "Supplier Name": "Craig LLC",
-        "Receipt Number": 3901688,
-        "Date": "2025-03-03",
-        "Time": "14:13:46",
-        "Category": "accommodation",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "281 Amber Isle\nDanielville, MT 37776",
-        "Supplier Phone Number": "643-958-2155x533",
-        "Locale": "en-US",
-        "Total Amount": 448.24,
-        "Total Net": 422.99,
-        "Total Tax": 6.9,
-        "Tip and Gratuity": 6.35,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0be1"
-                },
-                "Description": "incubate visionary infrastructures",
-                "Quantity": 1,
-                "Unit Price": 18.58,
-                "Total Price": 17.64
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0be2"
-        },
-        "Supplier Name": "Medina Ltd",
-        "Receipt Number": 7151511,
-        "Date": "2025-03-22",
-        "Time": "04:31:46",
-        "Category": "toll",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "68419 Thomas Drive Apt. 940\nMartinezview, PA 60705",
-        "Supplier Phone Number": "001-891-592-4850x106",
-        "Locale": "en-US",
-        "Total Amount": 194.16,
-        "Total Net": 394.05,
-        "Total Tax": 10.83,
-        "Tip and Gratuity": 13.86,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0be3"
-                },
-                "Description": "re-contextualize back-end action-items",
-                "Quantity": 1,
-                "Unit Price": 135.08,
-                "Total Price": 211.64
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0be4"
-        },
-        "Supplier Name": "Williams-Miles",
-        "Receipt Number": 3337233,
-        "Date": "2025-03-23",
-        "Time": "22:20:44",
-        "Category": "food",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "905 Gregory Curve Apt. 718\nSouth Kenneth, CA 72994",
-        "Supplier Phone Number": "+1-402-211-5706x011",
-        "Locale": "en-US",
-        "Total Amount": 358.35,
-        "Total Net": 241.15,
-        "Total Tax": 2.62,
-        "Tip and Gratuity": null,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0be5"
-                },
-                "Description": "innovate cross-media architectures",
-                "Quantity": 1,
-                "Unit Price": 76.87,
-                "Total Price": 439.06
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "6809b3c6deb8d983fd7d0be6"
-        },
-        "Supplier Name": "Porter-Thomas",
-        "Receipt Number": 2051770,
-        "Date": "2025-03-05",
-        "Time": "01:59:44",
-        "Category": "miscellaneous",
-        "Document Type": "EXPENSE RECEIPT",
-        "Supplier Address": "6671 Williams Grove\nLawrenceton, WA 39444",
-        "Supplier Phone Number": "001-477-805-6248x6499",
-        "Locale": "en-US",
-        "Total Amount": 263.16,
-        "Total Net": 285.27,
-        "Total Tax": 9.11,
-        "Tip and Gratuity": null,
-        "items": [
-            {
-                "_id": {
-                    "$oid": "6809b3c6deb8d983fd7d0be7"
-                },
-                "Description": "aggregate open-source partnerships",
-                "Quantity": 3,
-                "Unit Price": 100.48,
-                "Total Price": 479.49
-            }
-        ]
+        "Total Amount": 77.85,
+        "Total Net": 161.53,
+        "Total Tax": 3.65,
+        "Tip and Gratuity": null
     }
 ]

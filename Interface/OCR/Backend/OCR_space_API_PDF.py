@@ -13,7 +13,7 @@ def pdf_extract(pdf_path):
     pages = convert_from_path(pdf_path, poppler_path = poppler_path)
 
     # OCR.space API key
-    api_key = "K86302086688957"
+    api_key = "K89044574588957"
 
     # Output
     output = os.path.join(current_dir, '..', 'output_csv', 'output.csv')
@@ -41,6 +41,8 @@ def pdf_extract(pdf_path):
             try:
                 data = response.json()  # Convert API response to JSON
 
+                parsed_text = ""  # <-- Always define parsed_text first
+
                 if "ParsedResults" in data and len(data["ParsedResults"]) > 0:
                     parsed_text = data["ParsedResults"][0].get("ParsedText", "")  # Safely extract text
 
@@ -54,9 +56,11 @@ def pdf_extract(pdf_path):
             except requests.exceptions.JSONDecodeError:
                 print("Error: API response is not valid JSON")
                 print("Raw Response Content:", response.text)
+                parsed_text = ""  # Still define it in case of error
 
-            # Write text to CSV
-            lines = parsed_text.split("\n")  # Split text into lines
+            # Now parsed_text is always safe to use
+            lines = parsed_text.split("\n")
+
             page_lines = []  # Store lines for this page
             
             for j, line in enumerate(lines):
@@ -69,5 +73,5 @@ def pdf_extract(pdf_path):
     print(f"✅ OCR process completed! Extracted text saved in {output}")
 
 if __name__ == "__main__":
-    pdf_extract(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\OCR.space API\input\sample_short.pdf")
+    pdf_extract(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\FYP\Interface\OCR\input\sample_short.pdf")
 

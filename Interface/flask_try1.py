@@ -7,12 +7,12 @@ from dateutil.relativedelta import relativedelta
 import imghdr
 import os
 import magic
-import subprocess
 
-from MongoDB import In_monthly, Out_monthly, retrieve_expense_data, budget_data, \
+from MongoDB import Out_monthly, retrieve_expense_data, budget_data, \
     write_Budget, update_Budget
 from Graphs import draw_pie_chart, draw_T2_chart, create_expense_plot, sankey
 from Save_Data import Save_BS, Save_Reciept
+from initial import start
 
 
 client = MongoClient("mongodb://localhost:27018/")
@@ -34,7 +34,7 @@ categories = ["toll", "food", "parking", "transport", "accommodation", "shopping
 upload_path = ""
 
 
-#today= datetime.datetime(2025, 3, 31)
+today= datetime.datetime(2025, 3, 31)
 
 next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
@@ -47,7 +47,7 @@ else:
     user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
 
     
-#subprocess.run(["python", r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Interface\initial.py"])
+start()
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -61,9 +61,10 @@ def login():
 @app.route("/<username>")
 def home(username):
     current_month = today.strftime("%Y-%m")
-    total_income = In_monthly(current_month)
     total_expense = Out_monthly(current_month)
     this_month_budget = budget_data(current_month)
+    total_income = this_month_budget["Wadge"] + this_month_budget["Other_Income"]
+
     
     if this_month_budget != 0:
         available_budget = round((sum(this_month_budget.values()) - total_expense - this_month_budget["Wadge"] - this_month_budget["Other_Income"]), 2)

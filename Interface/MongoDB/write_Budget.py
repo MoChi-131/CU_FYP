@@ -12,7 +12,7 @@ def write_Budget(date, budget, output_path):
     "Parking": 0,
     "Transport": 0,
     "Accommodation": 0,
-    "Gasoline": 0,
+    "Shopping": 0,
     "Telecom": 0,
     "Miscellaneous": 0,
     "Other": 0,

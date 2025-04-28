@@ -7,7 +7,7 @@ from bson import ObjectId  # Importing ObjectId from bson
 fake = Faker()
 
 # Categories for the generated data
-categories = ["Toll", "Food", "Parking", "Transport", "Accommodation", "Gasoline", "Telecom", "Miscellaneous"]
+categories = ["toll", "food", "parking", "transport", "shopping", "telecom", "miscellaneous"]
 
 # Generate fake data
 fake_data = []
@@ -19,7 +19,7 @@ for _ in range(10):  # Adjust the number of records here
         "_id": {"$oid": str(ObjectId())},  # Generate a valid ObjectId
         "Supplier Name": fake.company(),
         "Receipt Number": random.randint(1000000, 9999999),
-        "Date": datetime.date(2025, 3, random.randint(1, 30)).strftime("%Y-%m-%d"),
+        "Date": datetime.date(2025, 2, random.randint(1, 28)).strftime("%Y-%m-%d"),
         "Time": fake.time(),
         "Category": category.lower(),
         "Document Type": "EXPENSE RECEIPT",
@@ -30,15 +30,15 @@ for _ in range(10):  # Adjust the number of records here
         "Total Net": round(random.uniform(10.00, 500.00), 2),
         "Total Tax": round(random.uniform(0.00, 20.00), 2),
         "Tip and Gratuity": random.choice([None, round(random.uniform(1.00, 20.00), 2)]),
-        "items": [
-            {
-                "_id": {"$oid": str(ObjectId())},  # Generate a valid ObjectId
-                "Description": fake.bs(),
-                "Quantity": random.randint(1, 5),
-                "Unit Price": round(random.uniform(5.00, 150.00), 2),
-                "Total Price": round(random.uniform(10.00, 500.00), 2)
-            }
-        ]
+        #"items": [
+        #    {
+        #        "_id": {"$oid": str(ObjectId())},  # Generate a valid ObjectId
+        #       "Description": fake.bs(),
+        #        "Quantity": random.randint(1, 5),
+        #        "Unit Price": round(random.uniform(5.00, 150.00), 2),
+        #        "Total Price": round(random.uniform(10.00, 500.00), 2)
+        #    }
+        #]
     }
     
     fake_data.append(data)

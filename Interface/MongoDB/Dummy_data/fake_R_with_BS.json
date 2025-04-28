@@ -13,16 +13,7 @@
       "Total Amount": 9.00,
       "Total Net": 9.00,
       "Total Tax": 0.00,
-      "Tip and Gratuity": { "$numberDouble": "NaN" },
-      "items": [
-        {
-          "_id": { "$oid": "66530f9a3df5f03e8f000002" },
-          "Description": "Chinese Takeaway Lunch",
-          "Quantity": 1,
-          "Unit Price": 9.00,
-          "Total Price": 9.00
-        }
-      ]
+      "Tip and Gratuity": { "$numberDouble": "NaN" }
     },
     {
       "_id": { "$oid": "66530f9a3df5f03e8f000003" },
@@ -38,16 +29,7 @@
       "Total Amount": 9.00,
       "Total Net": 9.00,
       "Total Tax": 0.00,
-      "Tip and Gratuity": { "$numberDouble": "NaN" },
-      "items": [
-        {
-          "_id": { "$oid": "66530f9a3df5f03e8f000004" },
-          "Description": "Monthly SIM Plan",
-          "Quantity": 1,
-          "Unit Price": 9.00,
-          "Total Price": 9.00
-        }
-      ]
+      "Tip and Gratuity": { "$numberDouble": "NaN" }
     },
     {
       "_id": { "$oid": "66530f9a3df5f03e8f000005" },
@@ -63,16 +45,59 @@
       "Total Amount": 9.00,
       "Total Net": 9.00,
       "Total Tax": 0.00,
-      "Tip and Gratuity": { "$numberDouble": "NaN" },
-      "items": [
-        {
-          "_id": { "$oid": "66530f9a3df5f03e8f000006" },
-          "Description": "Gym Pass",
-          "Quantity": 1,
-          "Unit Price": 9.00,
-          "Total Price": 9.00
-        }
-      ]
+      "Tip and Gratuity": { "$numberDouble": "NaN" }
+    },
+    {
+      "_id": { "$oid": "66530f9a3df5f03e8f000007" },
+      "Supplier Name": "House",
+      "Date": "2025-04-28",
+      "Category": "accommodation",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Cardiff, UK",
+      "Organization Phone Number": { "$numberDouble": "NaN" },
+      "Locale": "en-GB",
+      "Total Amount": 500.00,
+      "Total Net": 500.00,
+      "Total Tax": 0.00
+    },
+    {
+      "_id": { "$oid": "66530f9a3df5f03e8f020007" },
+      "Supplier Name": "House",
+      "Date": "2025-03-28",
+      "Category": "accommodation",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Cardiff, UK",
+      "Organization Phone Number": { "$numberDouble": "NaN" },
+      "Locale": "en-GB",
+      "Total Amount": 500.00,
+      "Total Net": 500.00,
+      "Total Tax": 0.00
+    },
+    {
+      "_id": { "$oid": "66530f9a3df5f03e8f000057" },
+      "Supplier Name": "House",
+      "Date": "2025-02-18",
+      "Category": "accommodation",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Cardiff, UK",
+      "Organization Phone Number": { "$numberDouble": "NaN" },
+      "Locale": "en-GB",
+      "Total Amount": 500.00,
+      "Total Net": 500.00,
+      "Total Tax": 0.00
+    },
+    {
+      "_id": { "$oid": "66530f9a3df5f03e8f003007" },
+      "Supplier Name": "House",
+      "Date": "2025-01-28",
+      "Category": "accommodation",
+      "Document Type": "EXPENSE RECEIPT",
+      "Supplier Address": "Cardiff, UK",
+      "Organization Phone Number": { "$numberDouble": "NaN" },
+      "Locale": "en-GB",
+      "Total Amount": 500.00,
+      "Total Net": 500.00,
+      "Total Tax": 0.00
     }
   ]
   
