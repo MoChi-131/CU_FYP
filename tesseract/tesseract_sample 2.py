@@ -1,7 +1,7 @@
 import csv
 import pytesseract
 
-input = "sample.png"
+input = "page_1.png"
 output = "output.csv"
 
 # Writing
@@ -14,5 +14,6 @@ with open(output, mode="w", newline="", encoding="utf-8") as csv_file:
     for j, line in enumerate(lines):
         if line.strip():  # Ignore empty lines
             csv_writer.writerow([line.strip()])
+            print(line.strip())
 
 print(f"Complete! Saved as {output}")

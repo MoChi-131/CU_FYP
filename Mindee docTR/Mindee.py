@@ -10,7 +10,7 @@ file_2 = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_Ite
 mindee_client = Client(api_key="b3419d2b5496291a0cf32219c99d4de1")
 
 # Load the file
-input_doc = mindee_client.source_from_path(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\Mindee docTR\Receipt_1.jpg")
+input_doc = mindee_client.source_from_path(r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\FYP\Input\Receipt_Saint.jpg")
 
 attribute_1 = [
     "Supplier Name", "Receipt Number", "Date", "Time", "Category", "Document Type", 

@@ -34,7 +34,7 @@ categories = ["toll", "food", "parking", "transport", "accommodation", "shopping
 upload_path = ""
 
 
-today= datetime.datetime(2025, 3, 31)
+today= datetime.datetime(2025, 3, 30)
 
 next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
@@ -63,11 +63,11 @@ def home(username):
     current_month = today.strftime("%Y-%m")
     total_expense = Out_monthly(current_month)
     this_month_budget = budget_data(current_month)
-    total_income = this_month_budget["Wadge"] + this_month_budget["Other_Income"]
+    total_income = (this_month_budget["Wadge"] + this_month_budget["Other_Income"])
 
     
     if this_month_budget != 0:
-        available_budget = round((sum(this_month_budget.values()) - total_expense - this_month_budget["Wadge"] - this_month_budget["Other_Income"]), 2)
+        available_budget = round((sum(this_month_budget.values()) - total_expense - this_month_budget["Wadge"] - this_month_budget["Other_Income"] - this_month_budget["Saving"]), 2)
     else:
         available_budget = 0
     
