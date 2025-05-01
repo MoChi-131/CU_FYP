@@ -73,7 +73,7 @@ def create_expense_plot(current_date=None, mode=None, categories=[]):
     for i, total in enumerate(stack_totals):
         ax.text(
             i,
-            total + 10,  # Offset above the stack
+            total + 1,  # Offset above the stack
             f'£{total:.2f}',
             ha='center',
             va='bottom',
