@@ -34,7 +34,7 @@ categories = ["toll", "food", "parking", "transport", "accommodation", "shopping
 upload_path = ""
 
 
-today= datetime.datetime(2025, 4, 30)
+today= datetime.datetime(2025, 3, 30)
 
 next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
@@ -44,7 +44,7 @@ file_path = os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_mo
 if os.path.exists(file_path):
     user_budget = list(budget_data(next_month_date).values())
 else:
-    user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 300, 250, 100]
+    user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 200, 250, 100]
 
     
 start()
