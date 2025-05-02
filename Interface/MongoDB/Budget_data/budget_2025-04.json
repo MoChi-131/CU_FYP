@@ -4,13 +4,13 @@
         "Wadge": 2000.0,
         "Other_Income": 250.0,
         "Toll": 200.0,
-        "Food": 450.0,
-        "Parking": 10.0,
-        "Transport": 150.0,
+        "Food": 500.0,
+        "Parking": 100.0,
+        "Transport": 200.0,
         "Accommodation": 300.0,
-        "Shopping": 100.0,
+        "Shopping": 50.0,
         "Telecom": 50.0,
-        "Miscellaneous": 390.0,
+        "Miscellaneous": 300.0,
         "Other": 250.0,
         "Saving": 100.0
     }

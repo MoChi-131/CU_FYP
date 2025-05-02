@@ -84,6 +84,7 @@ def trend_1(username):
     else:
         mode = "Monthly"
         create_expense_plot(today, mode, categories)
+        
     return render_template("Trend_1.html", username=username, categories=categories)
 
 
