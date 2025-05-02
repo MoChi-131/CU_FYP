@@ -1,135 +1,29 @@
 Date,Description,Money Out,Money In,Balance
-2024-10-01,Reference: From SHUK HEI MOK,0.0,1.0,7.43
-2024-10-03,Reference: From NANXI LIJ & PUI CHI ANGIE WONG,0.0,29.74,147.17
-2024-10-03,To TS Kwong,20.0,0.0,127.17
-2024-10-03,To Yen Hei Bryan Cheung,8.0,0.0,119.17
-2024-10-03,Reference: From SHUK HEI MOK,0.0,1.0,120.17
-2024-10-03,Reference: To CHAK LUNG DRACO TSUI,12.0,0.0,108.17
-2024-10-03,Payment from Lee,0.0,1.0,109.17
-2024-10-03,Payment from Che&che,0.0,2.0,111.17
-2024-10-04,InsureandGo,5.26,0.0,105.91
-2024-10-09,To Ka Chun To,19.0,0.0,86.91
-2024-10-10,To TS Kwong,5.5,0.0,81.41
-2024-10-11,Payment from Kw,0.0,9.8,91.21
-2024-10-11,Reference: To SHUK HEI MOK,19.6,0.0,71.61
-2024-10-13,Payment from Foh Yu Lee,0.0,6.8,78.41
-2024-10-14,Reference: To NANXI LU,4.99,0.0,73.42
-2024-10-15,Www.cardiff.ac.uk,9.0,0.0,64.42
-2024-10-15,To Ka Chun To,9.9,0.0,54.52
-2024-10-15,Payment from Kw,0.0,15.8,56.32
-2024-10-15,Reference: From SHUK HEI MOK,0.0,46.5,58.12
-2024-10-15,Payment from Sze Ho Pok,0.0,6.0,59.92
-2024-10-16,Reference: From CHAK LUNG DRACO TSUI,0.0,206.0,75.72
-2024-10-17,Reference: To NANXI LU,7.66,0.0,68.06
-2024-10-19,Reference: To CHO HON LING,14.28,0.0,53.78
-2024-10-20,Payment from Kw,0.0,9.0,100.28
-2024-10-20,Reference: To NANXI LU & PUI CHI ANGIE WONG,10.0,0.0,90.28
-2024-10-21,Www.cardiff.ac.uk,46.5,0.0,43.78
-2024-10-21,Reference: From NANXI LU,0.0,10.0,49.78
-2024-10-22,Www.cardiff.ac.uk,9.0,0.0,40.78
-2024-10-22,Payment from Lu N,0.0,8.0,246.78
-2024-10-22,Reference: To NANXI LU & pul CHI ANGIE WONG,11.0,0.0,235.78
-2024-10-22,Reference: To NANXI LU & PUI CHI ANGIE WONG,3.0,0.0,232.78
-2024-10-23,Agoda,206.15,0.0,26.63
-2024-10-23,Reference: From CHAK LUNG DRACO TSUI,0.0,80.0,35.63
-2024-10-24,Www.cardiff.ac.uk,9.0,0.0,26.63
-2024-10-25,giffgaff,10.0,0.0,16.63
-2024-10-26,Payment from Wong Pui,0.0,50.0,26.63
-2024-10-26,To Chung Ho Ling,14.85,0.0,1.78
-2024-10-26,To Chung Ho Ling,5.0,0.0,6.78
-2024-10-29,Apple,2.99,0.0,3.79
-2024-11-01,Payment from Wong Pui,0.0,2.73,21.79
-2024-11-01,Payment from Wong Pui,0.0,100.0,1.79
-2024-11-01,To TS Kwong,5.2,0.0,96.59
-2024-11-01,To Ho Pok Sze,8.5,0.0,88.09
-2024-11-01,Payment from Wong Pui,0.0,60.0,38.09
-2024-11-01,Reference: To NANXI LU & PUI CHI ANGIE WONG,100.0,0.0,38.09
-2024-11-01,To TS Kwong,3.1,0.0,34.99
-2024-11-02,Www.cardiff.ac.uk,9.0,0.0,25.99
-2024-11-02,Www.cardiff.ac.uk,9.0,0.0,6.99
-2024-11-03,Payment from Sze Ho Pok,0.0,50.0,29.72
-2024-11-03,Payment from Wong Pui,0.0,3.0,129.72
-2024-11-03,Reference: To NANXI LU & pul CHI ANGIE WONG,100.0,0.0,29.72
-2024-11-07,"From: WONG POI, 74306082",0.0,122.0,89.72
-2024-11-07,To Chun Hin Mok,60.0,0.0,29.72
-2024-11-08,Reference: To NANXI LU & pul CHI ANGIE WONG,15.0,0.0,14.72
-2024-11-14,To TS Kwong,2.0,0.0,12.72
-2024-11-21,"From: WONG POI, 74306082",0.0,172.3,62.72
-2024-11-21,To Ho Pok Sze,13.4,0.0,49.32
-2024-11-21,Reference: To SHUK HEI MOK,20.0,0.0,29.32
-2024-11-25,giffgaff,10.0,0.0,19.32
-2024-11-29,Apple,2.99,0.0,16.33
-2024-11-30,Reference: From SHUK HEI MOK,0.0,50.0,29.33
-2024-12-04,Reference: To MIU CHI CHOW,10.0,0.0,19.33
-2024-12-04,Payment from Wong Pui,0.0,3.23,141.33
-2024-12-04,To Tsz Ying Lo,65.0,0.0,76.33
-2024-12-14,To Chung Ho Ling,4.63,0.0,71.7
-2024-12-14,To Ching Yin Siu,19.46,0.0,52.24
-2024-12-14,To TS Kwong,18.1,0.0,34.14
-2024-12-14,Reference: To SHUK HEI MOK,14.5,0.0,19.64
-2024-12-14,Payment from Wong Pui,0.0,22.0,191.94
-2024-12-14,To TS Kwong,172.3,0.0,19.64
-2024-12-14,Payment from Wong Pui,0.0,8.0,69.64
-2024-12-14,To Chung Man Tai,26.0,0.0,43.64
-2024-12-15,Apple,14.99,0.0,28.65
-2024-12-19,To TS Kwong,10.5,0.0,18.15
-2024-12-20,Reference: From SHUK HEI MOK,0.0,100.0,31.38
-2024-12-21,To Deng Yew Darryl Chen,2.4,0.0,28.98
-2024-12-25,giffgaff,10.0,0.0,18.98
-2024-12-27,Apple,2.99,0.0,15.99
-2024-12-27,Payment from Wong Pui,0.0,50.0,37.99
-2024-12-27,Reference: To Miu Chi C,36.84,0.0,1.15
-2025-01-01,Payment from Wong Pui,0.0,1.88,19.15
-2025-01-01,Reference: To Nanxi L,18.0,0.0,1.15
-2025-01-06,Payment from Wong Pui,0.0,1.88,101.15
-2025-01-06,To Ho Pok Sze,1.59,0.0,99.56
-2025-01-06,To Korean Cultural Centre UK No.6,50.0,0.0,49.56
-2025-01-10,Reference: To Chak Lung Draco T,10.0,0.0,39.56
-2025-01-11,Onerway,20.91,0.0,18.65
-2025-01-13,Payment from Wong Pui,0.0,20.15,68.65
-2025-01-13,To Ho Pok Sze,12.69,0.0,55.96
-2025-01-13,To TS Kwong,9.25,0.0,46.71
-2025-01-13,Payment from Kw,0.0,40.3,48.59
-2025-01-13,Reference: From SHUK HEI MOK,0.0,20.15,50.47
-2025-01-15,Apple,14.99,0.0,35.48
-2025-01-16,Onerway,22.21,0.0,13.27
-2025-01-17,Reference: From SHUK HEI MOK,0.0,10.0,33.42
-2025-01-17,Payment from Kw,0.0,5.0,73.72
-2025-01-17,Payment from Sze Ho Pok,0.0,72.77,93.87
-2025-01-18,To TS Kwong,13.0,0.0,80.87
-2025-01-19,Palace Hair Limit,10.0,0.0,70.87
-2025-01-20,To Pui Chi Angie Wong,50.0,0.0,20.87
-2025-01-22,Payment from Wong Pui,0.0,9.0,30.87
-2025-01-23,Apple,4.99,0.0,25.88
-2025-01-23,Www.cardiff.ac.uk,9.0,0.0,16.88
-2025-01-23,Www.cardiff.ac.uk,9.0,0.0,7.88
-2025-01-27,Payment from Wong Pui,0.0,4.5,2.88
-2025-01-28,giffgaff,10.0,0.0,2.88
-2025-01-28,Payment from Sze Ho Pok,0.0,4.0,75.65
-2025-01-28,To Ho Pok Sze,13.76,0.0,61.89
-2025-01-29,Jingxingexp,59.01,0.0,2.88
-2025-01-30,Reference: From CHAK LUNG DRACO TSUI,0.0,100.0,1.88
-2025-01-30,Payment from Sze Ho Pok,0.0,4.5,16.38
-2025-01-30,Payment from Wong Pui,0.0,9.0,20.38
-2025-01-31,Www.cardiff.ac.uk,9.0,0.0,1.38
-2025-01-31,Www.cardiff.ac.uk,9.0,0.0,2.38
-2025-02-03,Payment from Wong Pui,0.0,8.0,102.38
-2025-02-03,To TS Kwong,6.0,0.0,96.38
-2025-02-03,To Ho Pok Sze,1.59,0.0,94.79
-2025-02-05,Payment from Sze Ho Pok,0.0,20.5,99.29
-2025-02-05,Reference: From CHAK LUNG DRACO TSUI,0.0,0.0,108.29
-2025-02-08,Www.cardiff.ac.uk,9.0,0.0,99.29
-2025-02-08,Www.cardiff.ac.uk,9.0,0.0,90.29
-2025-02-13,Www.cardiff.ac.uk,9.0,0.0,81.29
-2025-02-13,Www.cardiff.ac.uk,9.0,0.0,72.29
-2025-02-16,Reference: From CHAK LUNG DRACO TSUI,0.0,0.0,90.29
-2025-02-18,Www.cardiff.ac.uk,9.0,0.0,81.29
-2025-02-18,Www.cardiff.ac.uk,9.0,0.0,72.29
-2025-02-21,To TS Kwong,10.0,0.0,61.29
-2025-02-24,Www.cardiff.ac.uk,9.0,0.0,52.29
-2025-02-24,Www.cardiff.ac.uk,9.0,0.0,43.29
-2025-02-24,Payment from Sze Ho Pok,0.0,0.0,63.79
-2025-02-25,Www.cardiff.ac.uk,9.0,0.0,54.79
-2025-02-25,Www.cardiff.ac.uk,9.0,0.0,45.79
-2025-02-25,Reference: To Shuk Hei M,13.5,0.0,32.29
-2025-02-27,giffgaff,10.0,0.0,22.29
+2025-04-01,Apple Pay Top-Up by *2180,0.0,43.29,56.54
+2025-04-01,Apple Pay Top-Up by *1 573,0.0,4.0,70.54
+2025-04-03,Www.cardiff.ac.uk,9.0,0.0,61.54
+2025-04-03,Www.cardiff.ac.uk,9.0,0.0,52.54
+2025-04-04,Sainsbury's,3.75,0.0,48.79
+2025-04-05,Www.cardiff.ac.uk,9.0,0.0,39.79
+2025-04-05,Www.cardiff.ac.uk,9.0,0.0,30.79
+2025-04-06,To Ching Yin Siu,10.15,0.0,20.64
+2025-04-11,Apple Pay Top-Up by *1 573,0.0,30.0,50.64
+2025-04-12,Www.cardiff.ac.uk,9.0,0.0,41.64
+2025-04-12,Www.cardiff.ac.uk,9.0,0.0,32.64
+2025-04-12,Www.cardiff.ac.uk,9.0,0.0,23.64
+2025-04-12,Www.cardiff.ac.uk,9.0,0.0,14.64
+2025-04-14,Apple Pay Top-Up by *2180,0.0,50.0,64.64
+2025-04-15,Onerway,31.26,0.0,33.38
+2025-04-17,Sainsbury's,3.69,0.0,29.69
+2025-04-17,KFC,5.97,0.0,23.72
+2025-04-17,Www.cardiff.ac.uk,9.0,0.0,14.72
+2025-04-21,Apple Pay Top-Up by *2180,0.0,10.0,24.72
+2025-04-21,To Chung Ho Ling,5.29,0.0,19.43
+2025-04-22,Apple Pay Top-Up by *2180,0.0,9.19,28.62
+2025-04-23,Onerway,28.62,0.0,10.0
+2025-04-24,"From Ona*hungrypanda Co, London",0.0,4.17,4.17
+2025-04-24,Apple Pay Top-Up by *1 573,0.0,70.0,74.17
+2025-04-24,Reference: To Shuk Hei M,14.9,0.0,59.27
+2025-04-24,To TS Kwong,51.86,0.0,7.41
+2025-04-24,Payment from Kw,0.0,4.5,1.91
+2025-04-27,giffgaff,10.0,0.0,1.91
