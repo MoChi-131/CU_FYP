@@ -36,7 +36,7 @@ def create_expense_plot(current_date=None, mode=None, categories_set=[], sort=No
     # Extract and process data
     if sort == "All Category":
         categories = data['categories']
-        category_data = dict(reversed(list(data['category_data'].items())))
+        category_data = data['category_data']
         stack_totals = data['stack_totals']
     else:
         category = sort
