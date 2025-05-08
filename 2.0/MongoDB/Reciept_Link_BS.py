@@ -2,9 +2,9 @@ from pymongo import MongoClient
 
 def Reciept_Link_BS():
 
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]  # Your database
-    collection = db["Reciept_Full_Detail"]  # Replace with your collection
+    collection = db["Receipt_Full_Detail"]  # Replace with your collection
 
     pipeline = [
         {

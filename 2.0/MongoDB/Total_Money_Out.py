@@ -2,7 +2,7 @@ from pymongo import MongoClient
 
 def Out_monthly(date):
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]  
     collection = db["Full_Detail"]  
 

@@ -20,7 +20,7 @@ def Scan_Reciept(upload_file):
         "Total Net", "Total Tax", "Tip and Gratuity"
     ]
 
-    attribute_2 = ["Supplier Name", "Receipt Number", "Description", "Quantity", "Unit Price", "Total Price"]
+    attribute_2 = ["Supplier Name", "Receipt Number", "Date", "Description", "Quantity", "Unit Price", "Total Price"]
 
     # Parse the receipt
     result: PredictResponse = mindee_client.parse(product.ReceiptV5, input_doc)
@@ -65,6 +65,7 @@ def Scan_Reciept(upload_file):
             data_2 = {
                 "Supplier Name": prediction.supplier_name.value if prediction.supplier_name else None,
                 "Receipt Number": prediction.receipt_number.value if prediction.receipt_number else None,
+                "Date": prediction.date.value if prediction.date else None,
                 "Description": item.description if item.description else None,
                 "Quantity": item.quantity if item.quantity else None,
                 "Unit Price": item.unit_price if item.unit_price else None,

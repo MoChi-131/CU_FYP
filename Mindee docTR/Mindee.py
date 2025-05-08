@@ -53,6 +53,7 @@ with open(file_1, mode="w", newline="", encoding="utf-8") as csv_f:
     csv_writer.writerow(data_1.values())
 
 
+
 with open(file_2, mode="w", newline="", encoding="utf-8") as csv_f:
     csv_writer = csv.writer(csv_f)
     # **Write transaction details**

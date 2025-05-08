@@ -1,0 +1,17 @@
+{
+    "month": "2025-04",
+    "categories": {
+        "Wadge": 2200.0,
+        "Other_Income": 600.0,
+        "Toll": 200.0,
+        "Food": 400.0,
+        "Parking": 100.0,
+        "Transport": 150.0,
+        "Accommodation": 900.0,
+        "Shopping": 200.0,
+        "Telecom": 50.0,
+        "Miscellaneous": 200.0,
+        "Other": 500.0,
+        "Saving": 100.0
+    }
+}

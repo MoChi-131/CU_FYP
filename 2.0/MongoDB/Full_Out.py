@@ -2,14 +2,14 @@ from pymongo import MongoClient
 
 def Full_Out():
 
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]  # Your database
     collection = db["Money_Out"]  # Replace with your collection
 
     pipeline = [
         {
             "$lookup": {
-                "from": "Reciept_Full_Detail",
+                "from": "Receipt_Full_Detail",
                 "let": {
                     "desc": "$Description",
                     "money_out": "$Money Out"
@@ -34,15 +34,15 @@ def Full_Out():
                         }
                     }
                 ],
-                "as": "Reciept"
+                "as": "Receipt"
             }
         },
         {
             "$addFields": {
                 "Category": {
                     "$cond": {
-                        "if": {"$gt": [{"$size": "$Reciept"}, 0]},
-                        "then": {"$arrayElemAt": ["$Reciept.Category", 0]},
+                        "if": {"$gt": [{"$size": "$Receipt"}, 0]},
+                        "then": {"$arrayElemAt": ["$Receipt.Category", 0]},
                         "else": "other"
                     }
                 }

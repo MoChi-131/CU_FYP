@@ -1,10 +1,10 @@
 import pandas as pd
-import pymongo
 import pandas as pd
 import os
+import pymongo
 
 # MongoDB Connection
-client = pymongo.MongoClient("mongodb://localhost:27018/")  # Change to your MongoDB URI
+client = pymongo.MongoClient("mongodb://localhost:27017/")  # MongoDB URI
 db = client["Personal_Accounting"]  # Database Name
 collection = db["Bank_Statement"]  # Collection Name
 

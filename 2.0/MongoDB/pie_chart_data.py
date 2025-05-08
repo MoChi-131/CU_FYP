@@ -4,7 +4,7 @@ def fetch_category_data(date, categories):
     data = []
 
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]
     collection = db["Full_Detail"]
 

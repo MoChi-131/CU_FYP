@@ -41,8 +41,8 @@ def pdf_extract(pdf_path):
             try:
                 data = response.json()  # Convert API response to JSON
 
-                parsed_text = ""  # <-- Always define parsed_text first
-
+                parsed_text = "" 
+                
                 if "ParsedResults" in data and len(data["ParsedResults"]) > 0:
                     parsed_text = data["ParsedResults"][0].get("ParsedText", "")  # Safely extract text
 
@@ -58,7 +58,6 @@ def pdf_extract(pdf_path):
                 print("Raw Response Content:", response.text)
                 parsed_text = ""  # Still define it in case of error
 
-            # Now parsed_text is always safe to use
             lines = parsed_text.split("\n")
 
             page_lines = []  # Store lines for this page

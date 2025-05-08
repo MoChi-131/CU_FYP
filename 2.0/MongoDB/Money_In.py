@@ -2,9 +2,9 @@ from pymongo import MongoClient
 
 def agg_money_in():
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
-    db = client["Personal_Accounting"]  # Your database
-    collection = db["Bank_Statement"]  # Replace with your collection
+    client = MongoClient("mongodb://localhost:27017/")
+    db = client["Personal_Accounting"]  # database
+    collection = db["Bank_Statement"]  # collection
 
     # Define Aggregation Pipeline
     pipeline = [
@@ -19,3 +19,4 @@ def agg_money_in():
     print("Aggregation completed. Data saved in 'Money_In' collection.")
 
     return
+

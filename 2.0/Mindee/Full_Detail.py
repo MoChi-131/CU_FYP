@@ -2,17 +2,17 @@ from pymongo import MongoClient
 
 def Embed_Reciept():
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]  # Your database
-    collection = db["Reciept"]  # Replace with your collection
+    collection = db["Receipt"]  # Replace with your collection
 
     # Define Aggregation Pipeline
     pipeline = [
         {
             "$lookup": {
-                "from": "Raw_Data_Items",  # Collection to join
+                "from": "Receipt_Items",  # Collection to join
                 "let": {  # Define local variables to use in the sub-pipeline
-                    "receipt_number": "$Receipt Number",
+                    "date": "$Date",
                     "supplier_name": "$Supplier Name"
                 },
                 "pipeline": [
@@ -20,7 +20,7 @@ def Embed_Reciept():
                         "$match": {  # Match documents where both Receipt Number and Supplier Name are equal
                             "$expr": {
                                 "$and": [
-                                    {"$eq": ["$Receipt Number", "$$receipt_number"]},
+                                    {"$eq": ["$Date", "$$date"]},
                                     {"$eq": ["$Supplier Name", "$$supplier_name"]}
                                 ]
                             }
@@ -37,7 +37,7 @@ def Embed_Reciept():
             }
         },
         {
-            "$out": "Reciept_Full_Detail"  # Output the result to the Full_Detail collection
+            "$out": "Receipt_Full_Detail"  # Output the result to the Full_Detail collection
         }
     ]
 

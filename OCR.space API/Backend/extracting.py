@@ -1,7 +1,7 @@
 import csv
 import re
 
-input = r"C:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\OCR.space API\output_csv\output.csv"
+input = r"c:\Users\awang\OneDrive\桌面\CU\Year 3\FYP\FYP\OCR.space API\output_csv\output.csv"
 
 output = {}
 

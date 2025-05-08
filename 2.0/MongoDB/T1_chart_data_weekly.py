@@ -11,7 +11,7 @@ def retrieve_expense_data_weekly(current_date, categories):
     week_labels = [day.strftime('%a') for day in days_of_week]  
 
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]
     collection = db["Full_Detail"]
 

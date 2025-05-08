@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta
 
 def retrieve_expense_monthly_data(current_date, categories):        
     # Connect to MongoDB
-    client = MongoClient("mongodb://localhost:27018/")
+    client = MongoClient("mongodb://localhost:27017/")
     db = client["Personal_Accounting"]
     collection = db["Full_Detail"]
 

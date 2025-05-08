@@ -8,7 +8,6 @@ def data_extract():
 
     input= os.path.join(current_dir, '..', 'output_csv', 'output.csv')
 
-    output = {}
 
     # Keywords for financial data extraction
     key_words = ["Opening balance", "Money out", "Money in", "Closing",
@@ -41,7 +40,6 @@ def data_extract():
             print(f"{key}: {value}\n")
         
 
-    # Extract and clean values
     def extract_values(pages, line, data_dict, keyword_index, row_offset):
         """
         Extracts values from CSV and updates the dictionary.
