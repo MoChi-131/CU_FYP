@@ -15,6 +15,7 @@ from Save_Data import Save_BS, Save_Reciept
 from initial import start
 
 
+# Initialize MongoDB connection
 client = MongoClient("mongodb://localhost:27017/")
 try:
     client.admin.command('ping')
@@ -23,22 +24,23 @@ except Exception as e:
     print("MongoDB connection error:", e)
 
 
+# Initialize Flask app
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.pdf']
 app.config['UPLOAD_PATH'] = 'static/uploads'
 
 
-today = datetime.datetime.now()
+# Date setup
 categories = ["toll", "food", "parking", "transport", "accommodation", "shopping", "telecom", "miscellaneous", "other"]
 upload_path = ""
-
-
-today= datetime.datetime(2025, 4, 30)
-
+today= datetime.datetime(2025, 4, 30) # choose the date here
+#today = datetime.datetime.now()
 next_month = today + relativedelta(months=1)
 next_month_date = next_month.strftime("%Y-%m")
 
+
+# Load budget or initialize default
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_dir, 'MongoDB','Budget_data', f"budget_{next_month_date}.json")        
 if os.path.exists(file_path):
@@ -47,10 +49,12 @@ else:
     user_budget = [1500, 250, 200, 300, 100, 150, 300, 100, 50, 200, 250, 100]
 
     
+# Perform initial setup
 start()
 
 
 @app.route("/", methods=["GET", "POST"])
+# Login route: redirects to user's home page
 def login():
     if request.method == "POST":
         username = request.form.get("username")
@@ -59,6 +63,7 @@ def login():
 
 
 @app.route("/<username>")
+# Home dashboard: show current income, expenses, and budget summary
 def home(username):
     current_month = today.strftime("%Y-%m")
     total_expense = round(Out_monthly(current_month), 2)
@@ -77,6 +82,7 @@ def home(username):
 
 
 @app.route("/<username>/Trend_1", methods=["GET", "POST"])
+# Trend analysis by time and category
 def trend_1(username):
     if request.method == "POST":
         mode = request.form.get('time_period')
@@ -92,6 +98,7 @@ def trend_1(username):
 
 
 @app.route("/<username>/Trend_2")
+# Compare last month's budget vs expenses
 def trend_2(username):
     last_month = today - relativedelta(months=1)
     date = last_month.strftime("%B")
@@ -107,6 +114,7 @@ def trend_2(username):
 
 
 @app.route("/<username>/Budget",  methods=["GET", "POST"])
+# Set or update budget for next month
 def budget(username):
 
     global next_month
@@ -148,6 +156,8 @@ def budget(username):
     
     
 def validate_file(stream, file_ext):
+    # Validate uploaded file format
+    
     # Reset stream position after reading
     stream.seek(0)
     
@@ -171,11 +181,13 @@ def validate_file(stream, file_ext):
     return False
 
 @app.errorhandler(413)
+# Handle large file error
 def too_large(e):
     return "File is too large", 413
 
 
 @app.route("/<username>/Upload", methods=["GET", "POST"])
+# Upload page for receipts and bank statements
 def upload_page(username):
     files = os.listdir(app.config['UPLOAD_PATH'])
 
@@ -196,6 +208,7 @@ def upload_page(username):
 
 
 @app.route('/Upload', methods=['POST'])
+# File upload handler
 def upload_files():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
@@ -213,9 +226,11 @@ def upload_files():
     return '', 204
 
 @app.route('/uploads/<filename>')
+# Serve uploaded files
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_PATH'], filename)
 
 
+# Run the app
 if __name__ == "__main__":
     app.run(debug=False)
